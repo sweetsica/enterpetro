@@ -128,22 +128,22 @@
                                     <div class="bold black">#</div>
                                     <div class="bold black">Ngày nhập</div>
                                     <div class="bold black">Khách hàng</div>
-                                    <div class="bold black">ĐVT</div>
-                                    <div class="bold black">Khối lượng</div>
-                                    <div class="bold black">Số lượng</div>
+                                    {{--                                     <div class="bold black">ĐVT</div> --}}
+                                    {{--                                     <div class="bold black">Khối lượng</div> --}}
+                                    {{--                                     <div class="bold black">Số lượng</div> --}}
                                     <div class="bold black">Tổng Kg</div>
-                                    <div class="bold black">Đơn giá bán</div>
+                                    {{--                                     <div class="bold black">Đơn giá bán</div> --}}
                                     <div class="bold black">Doanh thu</div>
                                     <div class="bold black">Thanh toán</div>
-                                    <div class="bold black">Tiền nợ</div>
-                                    <div class="bold black">Nợ vỏ</div>
-                                    <div class="bold black">Số vỏ nợ</div>
-                                    <div class="bold black">Giá nhập hàng</div>
-                                    <div class="bold black">Tổng phí nhập hàng</div>
-                                    <div class="bold black">Tiền đã thanh toán nhập hàng</div>
-                                    <div class="bold black">Tổng tiền chi thanh toán nhập hàng</div>
-                                    <div class="bold black">Chênh dư nợ tiền thanh toán nhập hàng</div>
-                                    <div class="bold black">Thông tin nhận tiền</div>
+                                    {{--                                     <div class="bold black">Tiền nợ</div> --}}
+                                    {{--                                     <div class="bold black">Nợ vỏ</div> --}}
+                                    <div class="bold black text-center">Số vỏ nợ</div>
+                                    {{--                                     <div class="bold black">Giá nhập hàng</div> --}}
+                                    {{--                                     <div class="bold black">Tổng phí nhập hàng</div> --}}
+                                    {{--                                     <div class="bold black">Tiền đã thanh toán nhập hàng</div> --}}
+                                    {{--                                     <div class="bold black">Tổng tiền chi thanh toán nhập hàng</div> --}}
+                                    {{--                                     <div class="bold black">Chênh dư nợ tiền thanh toán nhập hàng</div> --}}
+                                    {{--                                     <div class="bold black">Thông tin nhận tiền</div> --}}
                                     <div class="bold black text-right">Ghi chú</div>
 
                                 </div>
@@ -185,13 +185,6 @@
                                 <div class="statistic-row">
                                     <div>1
                                     </div>
-                                    <div>758</div>
-                                    <div>758</div>
-                                    <div>758</div>
-                                    <div>758</div>
-                                    <div>758</div>
-                                    <div>758</div>
-                                    <div>758</div>
                                     <div>758</div>
                                     <div>758</div>
                                     <div>758</div>
@@ -254,11 +247,13 @@
                                 <!-- Statistics Row -->
 
                             </div>
+
                             <!-- End Product Statistics -->
                         </div>
                     </div>
                     <!-- End Card -->
                 </div>
+
             </div>
         </div>
     </div>1
