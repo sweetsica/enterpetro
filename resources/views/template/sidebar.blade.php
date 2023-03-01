@@ -20,9 +20,9 @@
                 </a>
                 <!-- Sub Menu -->
                 <ul class="nav sub-menu">
-                    <li><a href="../form&table/form-elements/base-input.html">Đơn hàng</a></li>
-                    <li><a href="../form&table/form-elements/input-group.html">Danh sách khách</a></li>
-                    <li><a href="../form&table/form-elements/checkbox.html">Danh sách giá</a></li>
+                    <li><a href="{{route('billDashboard')}}">Đơn hàng</a></li>
+                    <li><a href="{{route('billDetails')}}">Chi tiết đơn hàng</a></li>
+                    <li><a href="{{route('addPriceDaily')}}">Biến động giá</a></li>
                 </ul>
                 <!-- End Sub Menu -->
             </li>
