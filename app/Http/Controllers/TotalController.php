@@ -11,7 +11,7 @@ class TotalController extends Controller
      */
     public function index()
     {
-        //
+        return view('manage.index');
     }
 
     /**

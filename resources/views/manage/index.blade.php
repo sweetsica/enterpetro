@@ -68,590 +68,93 @@
                             </div>
                         </div>
                         <!-- End Contact Header -->
+                        <div class="card-body bg-white">
+                            <div class="d-flex flex-column flex-xl-row justify-content-xl-between mb-2">
+                                <div class="mb-4 mb-xl-0">
+                                    <h4 class="mb-1">Marketing Campaigns</h4>
+                                    <p class="font-14">I must explain to you how all this mistaken idea of denouncing pleasure at
+                                        <span class="full-date ml-2">15 Nov 2019 10:35am</span>
+                                    </p>
+                                </div>
 
-
-                        <div class="table-responsive">
-                            <!-- Invoice List Table -->
-                            <table class="contact-list-table text-nowrap bg-white">
-                                <thead>
-                                <tr>
-                                    <th>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
-                                        </div>
-                                        <!-- End Star -->
-                                    </th>
-                                    <th class="text-center">Name <img src="../../../assets/img/svg/table-down-arrow.svg" alt="" class="svg"></th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Age <img src="../../../assets/img/svg/table-down-arrow.svg" alt="" class="svg"></th>
-                                    <th>Post</th>
-                                    <th>Joining Date <img src="../../../assets/img/svg/table-down-arrow.svg" alt="" class="svg"></th>
-                                    <th>Salary <img src="../../../assets/img/svg/table-down-arrow.svg" alt="" class="svg"></th>
-                                    <th>Actions</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
-                                        </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m16.png" class="img-40" alt="">
+                                <div class="d-flex align-items-center flex-wrap">
+                                    <div class="d-flex align-items-center mr-4 mr-xl-5 ml-xl-n2 mb-4 mb-sm-0">
+                                        <div class="progress_12">
+                                            <!-- Progress Bar -->
+                                            <div class="ProgressBar-wrap2 position-relative">
+                                                <div class="ProgressBar ProgressBar_12" data-progress="67">
+                                                    <svg class="ProgressBar-contentCircle" viewBox="0 0 200 200">
+                                                        <circle transform="rotate(-90, 100, 100)" class="ProgressBar-background" cx="100" cy="100" r="85" />
+                                                        <circle transform="rotate(-90, 100, 100)" class="ProgressBar-circle" cx="100" cy="100" r="85" />
+                                                    </svg>
+                                                </div>
                                             </div>
-                                            <div class="name bold">
-                                                Arden Spencer
+                                            <!-- End Progress Bar -->
+                                        </div>
+                                        <div class="">
+                                            <p class="mb-1 font-14 l-height1">Products</p>
+                                            <h4>264</h4>
+                                        </div>
+                                    </div>
+
+                                    <div class="d-flex align-items-center mr-4 mr-xl-5 ml-xl-n2 mb-4 mb-sm-0">
+                                        <div class="progress_13">
+                                            <!-- Progress Bar -->
+                                            <div class="ProgressBar-wrap2 position-relative">
+                                                <div class="ProgressBar ProgressBar_13" data-progress="75">
+                                                    <svg class="ProgressBar-contentCircle" viewBox="0 0 200 200">
+                                                        <circle transform="rotate(-90, 100, 100)" class="ProgressBar-background" cx="100" cy="100" r="85" />
+                                                        <circle transform="rotate(-90, 100, 100)" class="ProgressBar-circle" cx="100" cy="100" r="85" />
+                                                    </svg>
+                                                </div>
                                             </div>
+                                            <!-- End Progress Bar -->
                                         </div>
-                                    </td>
-                                    <td>Evangeline62@yahoo.com</td>
-                                    <td>(023) 708-6818 x4267</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>June 20, 2015</td>
-                                    <td>$26253.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
+                                        <div class="">
+                                            <p class="mb-1 font-14 l-height1">Earned</p>
+                                            <h4>$16k</h4>
                                         </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m20.png" class="img-40" alt="">
+                                    </div>
+
+                                    <div class="d-flex align-items-center mr-4 mr-xl-5 ml-xl-n2 mb-4 mb-sm-0">
+                                        <div class="progress_14">
+                                            <!-- Progress Bar -->
+                                            <div class="ProgressBar-wrap2 position-relative">
+                                                <div class="ProgressBar ProgressBar_14" data-progress="48">
+                                                    <svg class="ProgressBar-contentCircle" viewBox="0 0 200 200">
+                                                        <circle transform="rotate(-90, 100, 100)" class="ProgressBar-background" cx="100" cy="100" r="85" />
+                                                        <circle transform="rotate(-90, 100, 100)" class="ProgressBar-circle" cx="100" cy="100" r="85" />
+                                                    </svg>
+                                                </div>
                                             </div>
-                                            <div class="name bold"> Favian Maggio DDS </div>
+                                            <!-- End Progress Bar -->
                                         </div>
-                                    </td>
-                                    <td>Electa_Conroy@hotmail.com</td>
-                                    <td>1-076-628-3095 x7154</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>October 11, 2019</td>
-                                    <td>$26253.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
+                                        <div class="">
+                                            <p class="mb-1 font-14 l-height1">Orders</p>
+                                            <h4>$4.6k</h4>
                                         </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m21.png" class="img-40" alt="">
+                                    </div>
+
+                                    <div class="d-flex align-items-center mb-4 mb-sm-0">
+                                        <div class="progress_15">
+                                            <!-- Progress Bar -->
+                                            <div class="ProgressBar-wrap2 position-relative">
+                                                <div class="ProgressBar ProgressBar_15" data-progress="78">
+                                                    <svg class="ProgressBar-contentCircle" viewBox="0 0 200 200">
+                                                        <circle transform="rotate(-90, 100, 100)" class="ProgressBar-background" cx="100" cy="100" r="85" />
+                                                        <circle transform="rotate(-90, 100, 100)" class="ProgressBar-circle" cx="100" cy="100" r="85" />
+                                                    </svg>
+                                                </div>
                                             </div>
-                                            <div class="name bold"> Jacey Considine </div>
+                                            <!-- End Progress Bar -->
                                         </div>
-                                    </td>
-                                    <td>Garry23@yahoo.com</td>
-                                    <td>1-016-234-2482</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>January 2, 2016</td>
-                                    <td>$6162.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
+                                        <div class="">
+                                            <p class="mb-1 font-14 l-height1">Delivered</p>
+                                            <h4>$3.4k</h4>
                                         </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m22.png" class="img-40" alt="">
-                                            </div>
-                                            <div class="name bold"> Kolby Torphy II </div>
-                                        </div>
-                                    </td>
-                                    <td>Phyllis75@hotmail.com</td>
-                                    <td>1-345-656-4163 x373</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>August 9, 2017</td>
-                                    <td>$4022.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
-                                        </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m23.png" class="img-40" alt="">
-                                            </div>
-                                            <div class="name bold"> Mattie Daugherty </div>
-                                        </div>
-                                    </td>
-                                    <td>Jessika.Conroy@yahoo.com</td>
-                                    <td>721-969-9795 x09197</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>December 24, 2016</td>
-                                    <td>$11588.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
-                                        </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m24.png" class="img-40" alt="">
-                                            </div>
-                                            <div class="name bold"> Timothy Littel </div>
-                                        </div>
-                                    </td>
-                                    <td>Nannie_Kling49@hotmail.com</td>
-                                    <td>1-251-141-2444 x275</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>February 8, 2019</td>
-                                    <td>$14283.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-
-                                <tr class="selected">
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox" checked>
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
-                                        </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m19.png" class="img-40" alt="">
-                                            </div>
-                                            <div class="name bold"> Karli Braun </div>
-                                        </div>
-                                    </td>
-                                    <td>Ruthe_Gleichner@gmail.com</td>
-                                    <td>697.704.7326</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>October 25, 2016</td>
-                                    <td>$13329.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-
-                                <tr class="selected">
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox" checked>
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
-                                        </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m16.png" class="img-40" alt="">
-                                            </div>
-                                            <div class="name bold">
-                                                Arden Spencer
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Evangeline62@yahoo.com</td>
-                                    <td>(023) 708-6818 x4267</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>June 20, 2015</td>
-                                    <td>$26253.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
-                                        </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m20.png" class="img-40" alt="">
-                                            </div>
-                                            <div class="name bold"> Favian Maggio DDS </div>
-                                        </div>
-                                    </td>
-                                    <td>Electa_Conroy@hotmail.com</td>
-                                    <td>1-076-628-3095 x7154</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>October 11, 2019</td>
-                                    <td>$26253.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
-                                        </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m21.png" class="img-40" alt="">
-                                            </div>
-                                            <div class="name bold"> Jacey Considine </div>
-                                        </div>
-                                    </td>
-                                    <td>Garry23@yahoo.com</td>
-                                    <td>1-016-234-2482</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>January 2, 2016</td>
-                                    <td>$6162.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
-                                        </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m22.png" class="img-40" alt="">
-                                            </div>
-                                            <div class="name bold"> Kolby Torphy II </div>
-                                        </div>
-                                    </td>
-                                    <td>Phyllis75@hotmail.com</td>
-                                    <td>1-345-656-4163 x373</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>August 9, 2017</td>
-                                    <td>$4022.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
-                                        </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m23.png" class="img-40" alt="">
-                                            </div>
-                                            <div class="name bold"> Timothy Littel </div>
-                                        </div>
-                                    </td>
-                                    <td>Nannie_Kling49@hotmail.com</td>
-                                    <td>1-251-141-2444 x275</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>February 8, 2019</td>
-                                    <td>$14283.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
-                                        </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m2.png" class="img-40" alt="">
-                                            </div>
-                                            <div class="name bold"> Birdie Thiel </div>
-                                        </div>
-                                    </td>
-                                    <td>Kenya.Stanton@yahoo.com</td>
-                                    <td>209-225-4857</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>August 7, 2015</td>
-                                    <td>$18037.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <!-- Custom Checkbox -->
-                                        <label class="custom-checkbox">
-                                            <input type="checkbox">
-                                            <span class="checkmark"></span>
-                                        </label>
-                                        <!-- End Custom Checkbox -->
-
-                                        <!-- Star -->
-                                        <div class="star">
-                                            <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
-                                        </div>
-                                        <!-- End Star -->
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <div class="img mr-20">
-                                                <img src="../../../assets/img/avatar/m19.png" class="img-40" alt="">
-                                            </div>
-                                            <div class="name bold"> Karli Braun </div>
-                                        </div>
-                                    </td>
-                                    <td>Ruthe_Gleichner@gmail.com</td>
-                                    <td>697.704.7326</td>
-                                    <td>28</td>
-                                    <td>UX Researcher</td>
-                                    <td>October 25, 2016</td>
-                                    <td>$13329.0</td>
-                                    <td class="actions">
-                                            <span class="contact-edit" data-toggle="modal" data-target="#contactEditModal">
-                                                <img src="../../../assets/img/svg/c-edit.svg" alt="" class="svg">
-                                            </span>
-                                        <span class="contact-close">
-                                                <img src="../../../assets/img/svg/c-close.svg" alt="" class="svg">
-                                            </span>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <!-- End Invoice List Table -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <!-- End Card -->
