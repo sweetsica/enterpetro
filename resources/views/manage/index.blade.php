@@ -168,65 +168,47 @@
                                     <form action="#">
 
                                         <div class="media flex-column flex-sm-row">
-                                            <div class="modal-upload-avatar mr-0 mr-sm-3 mr-md-5 mb-5 mb-sm-0">
-
-                                                <div class="attach-file style--two mb-3">
-                                                    <img src="../../../assets/img/img-placeholder.png" class="profile-avatar" alt="">
-                                                    <div class="upload-button">
-                                                        <img src="../../../assets/img/svg/gallery.svg" alt="" class="svg mr-2">
-                                                        <span>Upload Photo</span>
-                                                        <input class="file-input" type="file" id="fileUpload" accept="image/*">
-                                                    </div>
-                                                </div>
-
-                                                <div class="content">
-                                                    <h4 class="mb-2">Upload a Photo</h4>
-                                                    <p class="font-12 c4">Allowed JPG, GIF or PNG. Max size <br /> of 800kB</p>
-                                                </div>
-                                            </div>
-
-
                                             <div class="contact-account-setting media-body">
 
-                                                <h4 class="mb-4">Account Settings</h4>
+                                                <h4 class="mb-4">Thêm mới đơn hàng</h4>
 
-                                                <div class="mb-4">
-                                                    <label class="bold black mb-2" for="as_name">Name</label>
+                                                <div class="mb-4 col-xs-6">
+                                                    <label class="bold black mb-2" for="as_name">Tên khách</label>
                                                     <input type="text" id="as_name" class="theme-input-style" placeholder="Type Here" required>
                                                 </div>
 
-                                                <div class="mb-4">
-                                                    <label class="bold black mb-2" for="as_email">Email</label>
+                                                <div class="mb-4 col-xs-6">
+                                                    <label class="bold black mb-2" for="as_email">Loại bình</label>
                                                     <input type="email" id="as_email" class="theme-input-style" placeholder="Type Here" required>
                                                 </div>
 
                                                 <div class="mb-4">
-                                                    <label class="bold black mb-2"  for="as_phone">Phone</label>
+                                                    <label class="bold black mb-2"  for="as_phone">Số lượng</label>
                                                     <input type="number" id="as_phone" class="theme-input-style" placeholder="Type Here" required>
                                                 </div>
 
                                                 <div class="mb-4">
-                                                    <label class="bold black mb-2" for="as_age">Age</label>
+                                                    <label class="bold black mb-2" for="as_age">Địa chỉ</label>
                                                     <input type="text" id="as_age" class="theme-input-style" placeholder="Type Here" required>
                                                 </div>
 
                                                 <div class="mb-4">
-                                                    <label class="bold black mb-2" for="as_post">Post</label>
-                                                    <input type="text" id="as_post" class="theme-input-style" placeholder="Type Here" required>
+                                                    <label class="bold black mb-2" for="as_post">Giá nhập / Giá bán</label>
+                                                    <input type="text" id="as_post" class="theme-input-style" placeholder="190.000/210.000" disabled>
                                                 </div>
 
-                                                <div class="mb-30">
-                                                    <label class="bold black mb-2">Joining Date</label>
+{{--                                                <div class="mb-30">--}}
+{{--                                                    <label class="bold black mb-2">Joining Date</label>--}}
 
-                                                    <div class="date datepicker dashboard-date style--two" id="datePickerExample">
-                                                        <span class="input-group-addon mr-0"><img src="../../../assets/img/svg/calender.svg" alt="" class="svg"></span>
-                                                        <input type="text" class="pl-2" required>
-                                                    </div>
-                                                </div>
+{{--                                                    <div class="date datepicker dashboard-date style--two" id="datePickerExample">--}}
+{{--                                                        <span class="input-group-addon mr-0"><img src="../../../assets/img/svg/calender.svg" alt="" class="svg"></span>--}}
+{{--                                                        <input type="text" class="pl-2" required>--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
 
                                                 <div class="">
-                                                    <a href="#" class="btn mr-4">Save Changes</a>
-                                                    <a href="#" class="cancel font-14 bold" data-dismiss="modal">Cancel</a>
+                                                    <a href="#" class="btn mr-4">Lên đơn</a>
+                                                    <a href="#" class="cancel font-14 bold" data-dismiss="modal">Hủy</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -246,24 +228,6 @@
                                 <div class="modal-body">
                                     <form action="#">
                                         <div class="media flex-column flex-sm-row">
-                                            <div class="modal-upload-avatar mr-0 mr-sm-3 mr-md-5 mb-5 mb-sm-0">
-
-                                                <div class="attach-file style--two mb-3">
-                                                    <img src="../../../assets/img/product/pg2.png" class="profile-avatar" alt="">
-                                                    <div class="upload-button">
-                                                        <img src="../../../assets/img/svg/gallery.svg" alt="" class="svg mr-2">
-                                                        <span>Upload Photo</span>
-                                                        <input class="file-input" type="file" id="fileUpload2" accept="image/*">
-                                                    </div>
-                                                </div>
-
-                                                <div class="content">
-                                                    <h4 class="mb-2">Upload a Photo</h4>
-                                                    <p class="font-12 c4">Allowed JPG, GIF or PNG. Max size <br /> of 800kB</p>
-                                                </div>
-                                            </div>
-
-
                                             <div class="contact-account-setting media-body">
 
                                                 <h4 class="mb-4">Account Settings</h4>
