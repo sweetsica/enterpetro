@@ -20,9 +20,8 @@ use App\Http\Controllers\BillController;
 //    return view('welcome');
 //});
 
-Route::get('/', function () {
-    return view('manage.index');
-});
+//Trang kế toán tổng
+Route::get('/', [TotalController::class,'index'])->name('dashboard');
 
 //Trang chủ
 Route::get('/bills', [BillController::class,'index'])->name('billDashboard');
