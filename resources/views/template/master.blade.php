@@ -264,7 +264,7 @@
 
     <!-- Footer -->
     <footer class="footer">
-        EnterPetrp © 2023 ST</a>
+        EnterPetro © 2023 ST</a>
     </footer>
     <!-- End Footer -->
 </div>

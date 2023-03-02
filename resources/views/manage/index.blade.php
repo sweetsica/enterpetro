@@ -287,11 +287,6 @@
                     <div class="bg-white py-30 details-list-wrap">
                         <div class="table-responsive position-relative repeater-default pb-4">
 
-                            <h4 class="font-20 mb-4">Invoice Form</h4>
-
-                            <button data-repeater-create type="button" class="add-row-btn btn-circle">
-                                <img src="../../assets/img/svg/plus_white.svg" alt="" class="svg">
-                            </button>
 {{--                            <form method="post" action="#" style="width: 70%; margin:0% auto">--}}
 {{--                            @csrf--}}
                                 <!-- Invoice List Table -->
