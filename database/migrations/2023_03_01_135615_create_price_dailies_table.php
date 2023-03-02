@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('price_dailies', function (Blueprint $table) {
             $table->id();
+            $table->integer('buyPrice')->nullable();
+            $table->integer('salePrice')->nullable();
+            $table->string('author')->nullable();
             $table->timestamps();
         });
     }

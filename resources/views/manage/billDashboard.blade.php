@@ -11,7 +11,7 @@
                 <div class="col-12">
                     <!-- Card -->
                     <div class="card bg-transparent">
-                        <div class="card-body bg-white">
+                        <div class  ="card-body bg-white">
                             <div class="d-flex flex-column flex-xl-row justify-content-xl-between mb-2">
                                 <div class="mb-4 mb-xl-0">
                                     <h4 class="mb-1">Marketing Campaigns</h4>
@@ -96,6 +96,12 @@
                                             <h4>$3.4k</h4>
                                         </div>
                                     </div>
+
+                                    <div class="media-body ml-10 align-items-end">
+                                        <a href="#" class="btn s_alert bg-success-light text-success mr-3 mr-sm-4 mb-102  " data-toggle="modal" data-target="#contactAddModal">
+                                            Cập nhật giá
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -103,7 +109,7 @@
                             <!-- Product Statistics -->
                             <div class="product-statistics">
                                 <!-- Statistics Row -->
-                                <div class="statistic-row pb-1">
+                                <div class="statistic-row pb-1" style="text-align: center">
 {{--                                    <div class="bold black">Campaign <img src="../../assets/img/svg/table-up-arrow.svg" alt="" class="svg ml-3"></div>--}}
 {{--                                    <div class="bold black">Account Detail <img src="../../assets/img/svg/table-down-arrow.svg" alt="" class="svg ml-2"></div>--}}
 {{--                                    <div class="bold black">Budget</div>--}}
@@ -232,6 +238,43 @@
                         </div>
                     </div>
                     <!-- End Card -->
+
+                    <!-- Contact Add New PopUp -->
+                    <div id="contactAddModal" class="modal fade">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <!-- Modal Body -->
+                                <div class="modal-body">
+                                    <form action="#">
+
+                                        <div class="media flex-column flex-sm-row">
+                                            <div class="contact-account-setting media-body">
+
+                                                <h4 class="mb-4">Thêm mới giá</h4>
+
+                                                <div class="mb-4 col-xs-6">
+                                                    <label class="bold black mb-2" for="as_name">Giá nhập</label>
+                                                    <input type="text" id="as_name" class="theme-input-style" placeholder="Giá nhập" required>
+                                                </div>
+
+                                                <div class="mb-4 col-xs-6">
+                                                    <label class="bold black mb-2" for="as_email">Giá bán</label>
+                                                    <input type="email" id="as_email" class="theme-input-style" placeholder="Giá bán" required>
+                                                </div>
+
+                                                <div class="">
+                                                    <a href="#" class="btn mr-4">Lên đơn</a>
+                                                    <a href="#" class="cancel font-14 bold" data-dismiss="modal">Hủy</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!-- End Modal Body -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Contact Add New PopUp -->
                 </div>
             </div>
         </div>
