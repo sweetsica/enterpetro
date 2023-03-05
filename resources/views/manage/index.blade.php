@@ -364,7 +364,7 @@
             </div>
 
         </div>
-    </div>1
+    </div>
 @endsection
 @section('footer-script')
     <!-- jQuery -->

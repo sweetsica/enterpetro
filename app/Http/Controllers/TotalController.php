@@ -34,7 +34,10 @@ class TotalController extends Controller
     }
     public function index_sa()
     {
-        return view('sales.dashboard-sales');
+        $priceOrigin = PriceOrigin::all();
+        $shellTypes = ShellType::all();
+        $storages = Storage::all();
+        return view('sales.dashboard-sales')->with(compact('priceOrigin','shellTypes','storages'));
     }
     public function billTotal()
     {
