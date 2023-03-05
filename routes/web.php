@@ -20,11 +20,17 @@ use App\Http\Controllers\BillController;
 //    return view('welcome');
 //});
 
-//Trang kế toán tổng
-Route::get('/', [TotalController::class,'index'])->name('dashboard');
+//Đăng nhập
+Route::get('/', [TotalController::class,'index'])->name('login');
 
-//Trang chủ
-Route::get('/bills', [BillController::class,'index'])->name('billDashboard');
+//Trang chủ kế toán tổng
+Route::get('/dashboard-ad', [TotalController::class,'index_ad'])->name('dashboard-ad');
+
+//Trang chủ admin
+Route::get('/dashboard-ac', [TotalController::class,'index_ac'])->name('dashboard-ac');
+
+//Trang chủ salese
+Route::get('/dashboard-sa', [TotalController::class,'index_sa'])->name('dashboard-sa');
 
 //Chi tiết đơn hàng
 Route::get('/bill-details', [BillController::class,'show'])->name('billDetails');

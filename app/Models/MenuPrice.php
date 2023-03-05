@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PriceDaily extends Model
+class MenuPrice extends Model
 {
     use HasFactory;
 
@@ -13,6 +13,6 @@ class PriceDaily extends Model
 
     public function menuprice()
     {
-        return $this->belongsTo(MenuPrice::class);
+        return $this->hasMany(PriceDaily::class);
     }
 }

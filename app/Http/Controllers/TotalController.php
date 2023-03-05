@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\PriceDaily;
+use App\Models\PriceOrigin;
+use App\Models\ShellType;
+use App\Models\Storage;
 use Illuminate\Http\Request;
 
 class TotalController extends Controller
@@ -11,15 +15,33 @@ class TotalController extends Controller
      */
     public function index()
     {
-        return view('manage.index');
+        return view('login');
     }
 
     /**
      * Show the form for creating a new resource.
      */
+    public function index_ad()
+    {
+        $priceOrigin = PriceOrigin::all();
+        $shellTypes = ShellType::all();
+        $storages = Storage::all();
+        return view('manage.index')->with(compact('priceOrigin','shellTypes','storages'));
+    }
+    public function index_ac()
+    {
+        return view('accountant.dashboard-accountant');
+    }
+    public function index_sa()
+    {
+        return view('sales.dashboard-sales');
+    }
     public function billTotal()
     {
-        return view ('manage.billDetail');
+//        $priceOrigin = PriceOrigin::all();
+//        $shellTypes = ShellType::all();
+//        $storages = Storage::all();
+//        return view('manage.index')->with(compact('priceOrigin','shellTypes','storages'));
     }
 
     /**

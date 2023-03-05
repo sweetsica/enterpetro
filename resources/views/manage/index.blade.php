@@ -1,10 +1,11 @@
-
 @extends('template.master')
+{{--Trang chủ admin--}}
 @section('header')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 @endsection
 @section('content')
+{{--    @dump($priceOrigin)--}}
     <div class="main-content">
         <div class="container-fluid">
             <div class="row">
@@ -179,12 +180,27 @@
 
                                                 <div class="mb-4 col-xs-6">
                                                     <label class="bold black mb-2" for="as_email">Loại bình</label>
-                                                    <input type="email" id="as_email" class="theme-input-style" placeholder="Type Here" required>
+                                                    <select required>
+                                                        <option selected disabled>-Chọn-</option>
+                                                        @foreach($shellTypes as $shelltype)
+                                                            <option class="theme-input-style" placeholder="Chọn" value="{{$shelltype['massShell']}}">{{$shelltype['name']}}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
 
                                                 <div class="mb-4">
                                                     <label class="bold black mb-2"  for="as_phone">Số lượng</label>
                                                     <input type="number" id="as_phone" class="theme-input-style" placeholder="Type Here" required>
+                                                </div>
+
+                                                <div class="mb-4 col-xs-6">
+                                                    <label class="bold black mb-2" for="as_email">Chọn kho</label>
+                                                    <select required>
+                                                        <option selected disabled>-Chọn-</option>
+                                                        @foreach($storages as $storage)
+                                                            <option class="theme-input-style" placeholder="Chọn" value="{{$storage['id']}}">{{$storage['name']}}</option>
+                                                        @endforeach
+                                                    </select>
                                                 </div>
 
                                                 <div class="mb-4">

@@ -11,11 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('price_dailies', function (Blueprint $table) {
+        Schema::create('storages', function (Blueprint $table) {
             $table->id();
-            $table->integer('minMassShell')->nullable();
-            $table->integer('maxMassShell')->nullable();
-            $table->integer('salePrice')->nullable();
+            $table->string('name')->nullable();
+            $table->string('totalShell')->nullable();
+            $table->string('totalShellMass')->nullable();
+            $table->string('address')->nullable();
+            $table->string('contact')->nullable();
+            $table->string('note')->nullable();
             $table->boolean('status')->default('1');
             $table->timestamps();
         });
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('price_dailies');
+        Schema::dropIfExists('storages');
     }
 };

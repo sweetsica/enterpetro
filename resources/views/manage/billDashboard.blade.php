@@ -249,20 +249,94 @@
 
                                         <div class="media flex-column flex-sm-row">
                                             <div class="contact-account-setting media-body">
+                                                <div class="row">
+                                                    <div class="col-xl-12">
+                                                        <h4 class="font-20 mb-4">Nhập giá</h4>
+                                                        <!-- Form Element -->
+                                                        <div class="form-element py-30 mb-30">
+                                                            <form action="#" class="repeater-default">
+                                                                <!-- Repeater Heading -->
+                                                                <div class="repeater-heading">
 
-                                                <h4 class="mb-4">Thêm mới giá</h4>
+                                                                </div>
 
-                                                <div class="mb-4 col-xs-6">
-                                                    <label class="bold black mb-2" for="as_name">Giá nhập</label>
-                                                    <input type="text" id="as_name" class="theme-input-style" placeholder="Giá nhập" required>
+                                                                <!-- Repeater Html Start -->
+                                                                <div data-repeater-list="group-a">
+                                                                    <div class="row">
+                                                                        <div class="col-md-11">
+                                                                            <div class="row">
+                                                                                <!-- Form Group -->
+                                                                                <div class="col-md-4">
+                                                                                    <label for="inputName5" class="bold mb-2">Giá nhập</label>
+                                                                                </div>
+                                                                                <!-- End Form Group -->
+
+                                                                                <!-- Form Group -->
+                                                                                <div class="col-md-4">
+                                                                                    <label for="inputMobile3" class="bold mb-2">Giá bán</label>
+                                                                                </div>
+                                                                                <!-- End Form Group -->
+
+                                                                                <!-- Form Group -->
+                                                                                <div class="col-md-4">
+                                                                                    <label for="inputEmail3" class="bold mb-2" disabled>Ngày tạo</label>
+                                                                                </div>
+                                                                                <!-- End Form Group -->
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!-- Repeater Items -->
+                                                                    <div data-repeater-item>
+                                                                        <!-- Repeater Content -->
+                                                                        <div class="item-content align-items-center row">
+                                                                            <div class="col-md-11">
+                                                                                <div class="row">
+                                                                                    <!-- Form Group -->
+                                                                                    <div class="form-group mb-20 col-md-4">
+                                                                                        <input type="text" class="form-control" id="inputName5" placeholder="Type Your Name">
+                                                                                    </div>
+                                                                                    <!-- End Form Group -->
+
+                                                                                    <!-- Form Group -->
+                                                                                    <div class="form-group mb-20 col-md-4">
+                                                                                        <input type="text" class="form-control" id="inputMobile3" placeholder="Contact Number">
+                                                                                    </div>
+                                                                                    <!-- End Form Group -->
+
+                                                                                    <!-- Form Group -->
+                                                                                    <div class="mb-md-20 col-md-4">
+                                                                                        <input type="text" class="form-control" id="inputMobile3" placeholder="02-03-2023" disabled>
+                                                                                    </div>
+                                                                                    <!-- End Form Group -->
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-1 mb-20">
+                                                                                <!-- Repeater Remove Btn -->
+                                                                                <div class="repeater-remove-btn">
+                                                                                    <button data-repeater-delete class="remove-btn bg-transparent">
+                                                                                        <img src="../../assets/img/svg/remove.svg" alt="" class="svg">
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End Repeater Items -->
+                                                                </div>
+
+                                                                <!-- Repeater End -->
+                                                                <div class="mt-md-2">
+                                                                    <button data-repeater-create type="button" class="repeater-add-btn btn-circle position-relative">
+                                                                        <img src="../../assets/img/svg/plus_white.svg" alt="" class="svg">
+                                                                    </button>
+                                                                    <span class="bold c2 ml-1">Add New</span>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <!-- End Form Element -->
+                                                    </div>
                                                 </div>
-
-                                                <div class="mb-4 col-xs-6">
-                                                    <label class="bold black mb-2" for="as_email">Giá bán</label>
-                                                    <input type="email" id="as_email" class="theme-input-style" placeholder="Giá bán" required>
-                                                </div>
-
-                                                <div class="">
+                                                <div class="align-items-end">
                                                     <a href="#" class="btn mr-4">Lên đơn</a>
                                                     <a href="#" class="cancel font-14 bold" data-dismiss="modal">Hủy</a>
                                                 </div>

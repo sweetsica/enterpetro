@@ -11,7 +11,7 @@ class PriceDailyController extends Controller
      */
     public function index()
     {
-        //
+        return view('functions.priceDaily');
     }
 
     /**

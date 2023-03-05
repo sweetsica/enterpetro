@@ -11,12 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('price_dailies', function (Blueprint $table) {
+        Schema::create('shell_types', function (Blueprint $table) {
             $table->id();
-            $table->integer('minMassShell')->nullable();
-            $table->integer('maxMassShell')->nullable();
-            $table->integer('salePrice')->nullable();
-            $table->boolean('status')->default('1');
+            $table->string('name')->nullable();
+            $table->string('code')->nullable();
+            $table->integer('massShell')->nullable();
+            $table->string('unitShell')->nullable();
+            $table->string('note')->nullable();
+            $table->boolean('status')->default(1);
             $table->timestamps();
         });
     }
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('price_dailies');
+        Schema::dropIfExists('shell_types');
     }
 };

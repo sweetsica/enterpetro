@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('price_dailies', function (Blueprint $table) {
+        Schema::create('price_origins', function (Blueprint $table) {
             $table->id();
-            $table->integer('minMassShell')->nullable();
-            $table->integer('maxMassShell')->nullable();
-            $table->integer('salePrice')->nullable();
+            $table->integer('priceOrigin')->nullable();
+            $table->integer('minSaleOrigin')->nullable();
             $table->boolean('status')->default('1');
             $table->timestamps();
         });
@@ -26,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('price_dailies');
+        Schema::dropIfExists('price_origins');
     }
 };

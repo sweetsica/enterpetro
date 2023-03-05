@@ -20,9 +20,10 @@
                 </a>
                 <!-- Sub Menu -->
                 <ul class="nav sub-menu">
-                    <li><a href="{{route('billDashboard')}}">Đơn hàng</a></li>
-                    <li><a href="{{route('billDetails')}}">Chi tiết đơn hàng</a></li>
-                    <li><a href="{{route('addPriceDaily')}}">Biến động giá</a></li>
+                   <li><a href="{{route('priceDaily')}}">Nạp giá</a></li>
+{{--                    <li><a href="{{route('billDashboard')}}">Đơn hàng</a></li>--}}
+{{--                    <li><a href="{{route('billDetails')}}">Chi tiết đơn hàng</a></li>--}}
+{{--                    <li><a href="{{route('addPriceDaily')}}">Biến động giá</a></li>--}}
                 </ul>
                 <!-- End Sub Menu -->
             </li>
