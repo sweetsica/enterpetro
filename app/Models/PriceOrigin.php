@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class PriceOrigin extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['priceOrigin', 'minSaleOrigin'];
 }

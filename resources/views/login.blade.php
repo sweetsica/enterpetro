@@ -11,19 +11,19 @@
     <meta name="keywords" content="">
 
     <!-- Favicon -->
-    <link rel="shortcut icon"href="{{asset('/assets/img/favicon.png')}}">
+    <link rel="shortcut icon" href="{{asset('/assets/img/favicon.png')}}">
 
     <!-- Web Fonts -->
     <link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i&display=swap" rel="stylesheet">
 
     <!-- ======= BEGIN GLOBAL MANDATORY STYLES ======= -->
-    <link rel="stylesheet"href="{{asset('/assets/bootstrap/css/bootstrap.min.css')}}">
-    <link rel="stylesheet"href="{{asset('/assets/fonts/icofont/icofont.min.css')}}">
-    <link rel="stylesheet"href="{{asset('/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/bootstrap/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/fonts/icofont/icofont.min.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/plugins/perfect-scrollbar/perfect-scrollbar.min.css')}}">
     <!-- ======= END BEGIN GLOBAL MANDATORY STYLES ======= -->
 
     <!-- ======= MAIN STYLES ======= -->
-    <link rel="stylesheet"href="{{asset('/assets/css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('/assets/css/style.css')}}">
     <!-- ======= END MAIN STYLES ======= -->
 @endsection
 

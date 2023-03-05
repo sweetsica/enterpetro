@@ -281,6 +281,8 @@
 <script src="{{asset('assets/plugins/jquery-repeater/repeater.min.js')}}"></script>
 <script src="{{asset('assets/plugins/jquery-repeater/custom-repeater.js')}}"></script>
 <!-- ======= End BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
+
+@yield('footer-script')
 </body>
 
 </html>
