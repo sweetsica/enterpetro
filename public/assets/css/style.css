@@ -253,6 +253,24 @@ code {
   padding: .2em .4em;
 }
 
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
 html, body {
   overflow-x: hidden !important;
 }
@@ -3819,7 +3837,7 @@ a.text-dark:hover {
 ********************* */
 table {
   width: 100%;
-  max-width: 100%;
+  max-width: 1330px;
   font-size: 14px;
 }
 
