@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bill;
 use App\Models\PriceDaily;
 use App\Models\PriceOrigin;
 use App\Models\ShellType;
 use App\Models\Storage;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class TotalController extends Controller
 {
@@ -26,7 +28,8 @@ class TotalController extends Controller
         $priceOrigin = PriceOrigin::all();
         $shellTypes = ShellType::all();
         $storages = Storage::all();
-        return view('manage.index')->with(compact('priceOrigin','shellTypes','storages'));
+        $dataBills = Bill::all();
+        return view('manage.index')->with(compact('priceOrigin','shellTypes','storages','dataBills'));
     }
     public function index_ac()
     {
@@ -37,14 +40,21 @@ class TotalController extends Controller
         $priceOrigin = PriceOrigin::all();
         $shellTypes = ShellType::all();
         $storages = Storage::all();
-        return view('sales.dashboard-sales')->with(compact('priceOrigin','shellTypes','storages'));
+        $dataBill = Bill::all();
+        return view('sales.dashboard-sales')->with(compact('priceOrigin','shellTypes','storages','dataBill'));
     }
-    public function billTotal()
+    public function checklogin(Request $request)
     {
-//        $priceOrigin = PriceOrigin::all();
-//        $shellTypes = ShellType::all();
-//        $storages = Storage::all();
-//        return view('manage.index')->with(compact('priceOrigin','shellTypes','storages'));
+        $validator = Validator::make($request->all(),[
+            'username' => 'required|min:6|alpha_num',
+            'password' => 'required|min:8'
+        ]);
+        
+        if ($validator->fails()) {
+            return redirect()->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
     }
 
     /**

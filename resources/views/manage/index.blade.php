@@ -5,71 +5,13 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 @endsection
 @section('content')
-{{--    @dump($priceOrigin)--}}
     <div class="main-content">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-12">
                     <!-- Card -->
                     <div class="card bg-transparent">
-                        <!-- Contact Header -->
-                        <div class="contact-header d-flex align-items-sm-center media flex-column flex-sm-row bg-white mb-30">
-                            <div class="contact-header-left media-body d-flex align-items-center mr-4">
-                                <!-- Add New Contact Btn -->
-                                <div class="add-new-contact mr-20">
-                                    <a href="#" class="btn-circle" data-toggle="modal" data-target="#contactAddModal">
-                                        <img src="../../../assets/img/svg/plus_white.svg" alt="" class="svg">
-                                    </a>
-                                </div>
-                                <!-- End Add New Contact Btn -->
-
-                                <!-- Search Form -->
-                                <form action="#" class="search-form flex-grow">
-                                    <div class="theme-input-group style--two">
-                                        <input type="text" class="theme-input-style" placeholder="Search Here">
-
-                                        <button type="submit"><img src="../../../assets/img/svg/search-icon.svg" alt=""
-                                                                   class="svg"></button>
-                                    </div>
-                                </form>
-                                <!-- End Search Form -->
-                            </div>
-
-                            <div class="contact-header-right d-flex align-items-center justify-content-end mt-3 mt-sm-0">
-                                <!-- Grid -->
-                                <div class="grid">
-                                    <a href="contact-grid.html"><img src="../../../assets/img/svg/grid-icon.svg" alt="" class="svg"></a>
-                                </div>
-                                <!-- End Grid -->
-
-                                <!-- Starred -->
-                                <div class="star">
-                                    <a href="#"><img src="../../../assets/img/svg/star.svg" alt="" class="svg"></a>
-                                </div>
-                                <!-- End Starred -->
-
-                                <!-- Delete Mail -->
-                                <div class="delete_mail">
-                                    <a href="#"><img src="../../../assets/img/svg/delete.svg" alt="" class="svg"></a>
-                                </div>
-                                <!-- End Delete Mail -->
-
-                                <!-- Pagination -->
-                                <div class="pagination style--two d-flex flex-column align-items-center ml-n2">
-                                    <ul class="list-inline d-inline-flex align-items-center">
-                                        <li><a href="#">
-                                                <img src="../../../assets/img/svg/left-angle.svg" alt="" class="svg">
-                                            </a></li>
-                                        <li><a href="#" class="current">
-                                                <img src="../../../assets/img/svg/right-angle.svg" alt="" class="svg">
-                                            </a></li>
-                                    </ul>
-                                </div>
-                                <!-- End Pagination -->
-                            </div>
-                        </div>
-                        <!-- End Contact Header -->
-                        <div class="card-body bg-white">
+                        <div class  ="card-body bg-white">
                             <div class="d-flex flex-column flex-xl-row justify-content-xl-between mb-2">
                                 <div class="mb-4 mb-xl-0">
                                     <h4 class="mb-1">Marketing Campaigns</h4>
@@ -157,6 +99,96 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="table-responsive">
+                            <!-- Product Statistics -->
+                            <div class="product-statistics">
+                                <!-- Statistics Row -->
+                                <div class="statistic-row pb-1" style="text-align: center">
+                                    <div class="bold black">STT</div>
+                                    <div class="bold black">Khách hàng</div>
+                                    <div class="bold black">ĐVT</div>
+                                    <div class="bold black">Khối lượng</div>
+                                    <div class="bold black">Số lượng</div>
+                                    <div class="bold black">Tổng Kg</div>
+                                    <div class="bold black">Đơn giá bán</div>
+                                    <div class="bold black">Doanh thu</div>
+                                    <div class="bold black">Thanh toán</div>
+                                    <div class="bold black">Tiền nợ</div>
+                                    <div class="bold black">Nợ vỏ</div>
+                                    <div class="bold black">Số vỏ nợ</div>
+                                    <div class="bold black">Giá nhập hàng</div>
+                                    <div class="bold black">Tổng phí nhập hàng</div>
+                                    <div class="bold black">Tiền đã thanh toán nhập hàng</div>
+                                    <div class="bold black">Tổng tiền chi thanh toán nhập hàng</div>
+                                    <div class="bold black">Chênh dư nợ tiền thanh toán nhập hàng</div>
+                                    <div class="bold black">Thông tin nhận tiền</div>
+                                    <div class="bold black">Ghi chú</div>
+                                </div>
+                                <!-- End Statistics Row -->
+
+                                <!-- Statistics Row -->
+                                <div class="statistic-row bg-transparent days">today</div>
+                                <!-- End Statistics Row -->
+                            <!-- Statistics Row -->
+                                @foreach($dataBills as $dataBill)
+                                <div class="statistic-row">
+                                    <div class="bold black">{{$dataBill->id}}</div>
+                                    <div class="bold black">{{$dataBill->nameCustomer}}</div>
+                                    <div class="bold black">{{$dataBill->id}}</div>
+                                    <div class="bold black">{{$dataBill->shellType}}</div>
+                                    <div class="bold black">{{$dataBill->ammount}}</div>
+                                    <div class="bold black">{{$dataBill->massTotal}}</div>
+                                    <div class="bold black">{{$dataBill->priceSale}}</div>
+                                    <div class="bold black">{{$dataBill->income}}</div>
+                                    <div class="bold black">{{$dataBill->bill}}</div>
+                                    <div class="bold black">{{$dataBill->debt}}</div>
+                                    <div class="bold black">{{$dataBill->shellDebt}}</div>
+                                    <div class="bold black">{{$dataBill->shellDebtAmmount}}</div>
+                                    <div class="bold black">{{$dataBill->buyPrice}}</div>
+                                    <div class="bold black">{{$dataBill->buyTotal}}</div>
+                                    <div class="bold black">{{$dataBill->moneySent}}</div>
+                                    <div class="bold black">{{$dataBill->moneyPaidTotal}}</div>
+                                    <div class="bold black">{{$dataBill->moneyPaidDebt}}</div>
+                                    <div class="bold black">{{$dataBill->reciveInfo}}</div>
+                                    <div class="bold black">{{$dataBill->note}}</div>
+                                </div>
+                                @endforeach
+                                <!-- End Statistics Row -->
+
+
+                            {{--                                <!-- Statistics Row -->--}}
+                            {{--                                <div class="statistic-row pb-2">--}}
+                            {{--                                    <div><img src="../../assets/img/product/rp4.png" alt=""> Variegated Stripe Grill Set</div>--}}
+                            {{--                                    <div>4154 81** **** 7617</div>--}}
+                            {{--                                    <div>$3265</div>--}}
+                            {{--                                    <div>1458 <img src="../../assets/img/svg/table-down-arrow-red.svg" alt="" class="svg"></div>--}}
+                            {{--                                    <div class="text-center"><button type="button" class="status-btn completed">Completed</button></div>--}}
+                            {{--                                    <div>--}}
+                            {{--                                        <!-- Dropdown Button -->--}}
+                            {{--                                        <div class="dropdown-button">--}}
+                            {{--                                            <a href="#" class="d-flex align-items-center justify-content-end" data-toggle="dropdown">--}}
+                            {{--                                                <div class="menu-icon mr-0">--}}
+                            {{--                                                    <span></span>--}}
+                            {{--                                                    <span></span>--}}
+                            {{--                                                    <span></span>--}}
+                            {{--                                                </div>--}}
+                            {{--                                            </a>--}}
+                            {{--                                            <div class="dropdown-menu dropdown-menu-right">--}}
+                            {{--                                                <a href="#">Daily</a>--}}
+                            {{--                                                <a href="#">Sort By</a>--}}
+                            {{--                                                <a href="#">Monthly</a>--}}
+                            {{--                                            </div>--}}
+                            {{--                                        </div>--}}
+                            {{--                                        <!-- End Dropdown Button -->--}}
+                            {{--                                    </div>--}}
+                            {{--                                </div>--}}
+                            {{--                                <!-- End Statistics Row -->--}}
+
+                            <!-- Statistics Row -->
+
+                            </div>
+                            <!-- End Product Statistics -->
+                        </div>
                     </div>
                     <!-- End Card -->
 
@@ -170,59 +202,94 @@
 
                                         <div class="media flex-column flex-sm-row">
                                             <div class="contact-account-setting media-body">
+                                                <div class="row">
+                                                    <div class="col-xl-12">
+                                                        <h4 class="font-20 mb-4">Nhập giá</h4>
+                                                        <!-- Form Element -->
+                                                        <div class="form-element py-30 mb-30">
+                                                            <form action="#" class="repeater-default">
+                                                                <!-- Repeater Heading -->
+                                                                <div class="repeater-heading">
 
-                                                <h4 class="mb-4">Thêm mới đơn hàng</h4>
+                                                                </div>
 
-                                                <div class="mb-4 col-xs-6">
-                                                    <label class="bold black mb-2" for="as_name">Tên khách</label>
-                                                    <input type="text" id="as_name" class="theme-input-style" placeholder="Type Here" required>
+                                                                <!-- Repeater Html Start -->
+                                                                <div data-repeater-list="group-a">
+                                                                    <div class="row">
+                                                                        <div class="col-md-11">
+                                                                            <div class="row">
+                                                                                <!-- Form Group -->
+                                                                                <div class="col-md-4">
+                                                                                    <label for="inputName5" class="bold mb-2">Giá nhập</label>
+                                                                                </div>
+                                                                                <!-- End Form Group -->
+
+                                                                                <!-- Form Group -->
+                                                                                <div class="col-md-4">
+                                                                                    <label for="inputMobile3" class="bold mb-2">Giá bán</label>
+                                                                                </div>
+                                                                                <!-- End Form Group -->
+
+                                                                                <!-- Form Group -->
+                                                                                <div class="col-md-4">
+                                                                                    <label for="inputEmail3" class="bold mb-2" disabled>Ngày tạo</label>
+                                                                                </div>
+                                                                                <!-- End Form Group -->
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <!-- Repeater Items -->
+                                                                    <div data-repeater-item>
+                                                                        <!-- Repeater Content -->
+                                                                        <div class="item-content align-items-center row">
+                                                                            <div class="col-md-11">
+                                                                                <div class="row">
+                                                                                    <!-- Form Group -->
+                                                                                    <div class="form-group mb-20 col-md-4">
+                                                                                        <input type="text" class="form-control" id="inputName5" placeholder="Type Your Name">
+                                                                                    </div>
+                                                                                    <!-- End Form Group -->
+
+                                                                                    <!-- Form Group -->
+                                                                                    <div class="form-group mb-20 col-md-4">
+                                                                                        <input type="text" class="form-control" id="inputMobile3" placeholder="Contact Number">
+                                                                                    </div>
+                                                                                    <!-- End Form Group -->
+
+                                                                                    <!-- Form Group -->
+                                                                                    <div class="mb-md-20 col-md-4">
+                                                                                        <input type="text" class="form-control" id="inputMobile3" placeholder="02-03-2023" disabled>
+                                                                                    </div>
+                                                                                    <!-- End Form Group -->
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-md-1 mb-20">
+                                                                                <!-- Repeater Remove Btn -->
+                                                                                <div class="repeater-remove-btn">
+                                                                                    <button data-repeater-delete class="remove-btn bg-transparent">
+                                                                                        <img src="../../assets/img/svg/remove.svg" alt="" class="svg">
+                                                                                    </button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- End Repeater Items -->
+                                                                </div>
+
+                                                                <!-- Repeater End -->
+                                                                <div class="mt-md-2">
+                                                                    <button data-repeater-create type="button" class="repeater-add-btn btn-circle position-relative">
+                                                                        <img src="../../assets/img/svg/plus_white.svg" alt="" class="svg">
+                                                                    </button>
+                                                                    <span class="bold c2 ml-1">Add New</span>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                        <!-- End Form Element -->
+                                                    </div>
                                                 </div>
-
-                                                <div class="mb-4 col-xs-6">
-                                                    <label class="bold black mb-2" for="as_email">Loại bình</label>
-                                                    <select required>
-                                                        <option selected disabled>-Chọn-</option>
-                                                        @foreach($shellTypes as $shelltype)
-                                                            <option class="theme-input-style" placeholder="Chọn" value="{{$shelltype['massShell']}}">{{$shelltype['name']}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <label class="bold black mb-2"  for="as_phone">Số lượng</label>
-                                                    <input type="number" id="as_phone" class="theme-input-style" placeholder="Type Here" required>
-                                                </div>
-
-                                                <div class="mb-4 col-xs-6">
-                                                    <label class="bold black mb-2" for="as_email">Chọn kho</label>
-                                                    <select required>
-                                                        <option selected disabled>-Chọn-</option>
-                                                        @foreach($storages as $storage)
-                                                            <option class="theme-input-style" placeholder="Chọn" value="{{$storage['id']}}">{{$storage['name']}}</option>
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <label class="bold black mb-2" for="as_age">Địa chỉ</label>
-                                                    <input type="text" id="as_age" class="theme-input-style" placeholder="Type Here" required>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <label class="bold black mb-2" for="as_post">Giá nhập / Giá bán</label>
-                                                    <input type="text" id="as_post" class="theme-input-style" placeholder="190.000/210.000" disabled>
-                                                </div>
-
-{{--                                                <div class="mb-30">--}}
-{{--                                                    <label class="bold black mb-2">Joining Date</label>--}}
-
-{{--                                                    <div class="date datepicker dashboard-date style--two" id="datePickerExample">--}}
-{{--                                                        <span class="input-group-addon mr-0"><img src="../../../assets/img/svg/calender.svg" alt="" class="svg"></span>--}}
-{{--                                                        <input type="text" class="pl-2" required>--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-
-                                                <div class="">
+                                                <div class="align-items-end">
                                                     <a href="#" class="btn mr-4">Lên đơn</a>
                                                     <a href="#" class="cancel font-14 bold" data-dismiss="modal">Hủy</a>
                                                 </div>
@@ -235,134 +302,8 @@
                         </div>
                     </div>
                     <!-- End Contact Add New PopUp -->
-
-                    <!-- Contact Edit PopUp -->
-                    <div id="contactEditModal" class="modal fade">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <!-- Modal Body -->
-                                <div class="modal-body">
-                                    <form action="#">
-                                        <div class="media flex-column flex-sm-row">
-                                            <div class="contact-account-setting media-body">
-
-                                                <h4 class="mb-4">Account Settings</h4>
-
-                                                <div class="mb-4">
-                                                    <label class="bold black mb-2" for="as_name2">Name</label>
-                                                    <input type="text" id="as_name2" class="theme-input-style" value="Arden Spencer" required>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <label class="bold black mb-2" for="as_email2">Email</label>
-                                                    <input type="email" id="as_email2" class="theme-input-style" value="Evangeline62@yahoo.com" required>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <label class="bold black mb-2"  for="as_phone2">Phone</label>
-                                                    <input type="text" id="as_phone2" class="theme-input-style" value="(023) 708-6818 x4267" required>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <label class="bold black mb-2" for="as_age2">Age</label>
-                                                    <input type="text" id="as_age2" class="theme-input-style" value="28" required>
-                                                </div>
-
-                                                <div class="mb-4">
-                                                    <label class="bold black mb-2" for="as_post2">Post</label>
-                                                    <input type="text" id="as_post2" class="theme-input-style" value="UX Researcher" required>
-                                                </div>
-
-                                                <div class="mb-30">
-                                                    <label class="bold black mb-2">Joining Date</label>
-
-                                                    <div class="date datepicker dashboard-date style--two" id="datePickerExample2">
-                                                        <span class="input-group-addon mr-0"><img src="../../../assets/img/svg/calender.svg" alt="" class="svg"></span>
-                                                        <input type="text" class="pl-2" required>
-                                                    </div>
-                                                </div>
-
-                                                <div class="">
-                                                    <a href="#" class="btn mr-4">Save Changes</a>
-                                                    <a href="#" class="cancel font-14 bold" data-dismiss="modal">Cancel</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <!-- End Modal Body -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Contact Edit PopUp -->
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <!-- Invoice Details List Wrapper -->
-                    <div class="bg-white py-30 details-list-wrap">
-                        <div class="table-responsive position-relative repeater-default pb-4">
-
-{{--                            <form method="post" action="#" style="width: 70%; margin:0% auto">--}}
-{{--                            @csrf--}}
-                                <!-- Invoice List Table -->
-                                <table id="invoice-edit-list-table" class="invoice-list-table style-two text-nowrap">
-                                    <thead>
-                                    <tr>
-                                        <th>#</th>
-                                        <th>Ngày nhập</th>
-                                        <th><span>Khách hàng</span></th>
-                                        <th><span>ĐVT</span></th>
-                                        <th><span>KL/Bình</span></th>
-                                        <th><span>SL Bình</span></th>
-                                        <th><span>Tổng Kg</span></th>
-                                        <th><span>Đơn giá bán</span></th>
-                                        <th><span>Doanh thu</span></th>
-
-                                        <th class="text-center"><span>Amount</span></th>
-                                    </tr>
-                                    </thead>
-
-                                    <tbody data-repeater-list="group-a" class="bg-white">
-                                    <tr data-repeater-item>
-                                        <td class="bold">#01</td>
-                                        <td><input type="text" class="theme-input-style style--three" value="PSD to html conversion"></td>
-                                        <td><input type="text" class="theme-input-style style--three" value="26"></td>
-                                        <td><input type="text" class="theme-input-style style--three" value="$64.3"></td>
-                                        <td class="text-right">
-                                            <div class="">
-                                                <span>$2654.36</span>
-                                                <span data-repeater-delete class="tr-close">
-                                                            <img src="../../assets/img/svg/table-colse.svg" alt="" class="svg">
-                                                        </span>
-                                            </div>
-                                        </td>
-                                    </tr>
-
-                                    <tr data-repeater-item>
-                                        <td class="bold">#02</td>
-                                        <td><input type="text" class="theme-input-style style--three" value="PSD to html conversion"></td>
-                                        <td><input type="text" class="theme-input-style style--three" value="26"></td>
-                                        <td><input type="text" class="theme-input-style style--three" value="$64.3"></td>
-                                        <td class="text-right">
-                                            <div class="">
-                                                <span>$2654.36</span>
-                                                <span data-repeater-delete class="tr-close">
-                                                                <img src="../../assets/img/svg/table-colse.svg" alt="" class="svg">
-                                                            </span>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                                <!-- End Invoice List Table -->
-{{--                            </form>--}}
-                        </div>
-                    </div>
-                    <!-- End Invoice Details List Wrapper -->
-                </div>
-            </div>
-
         </div>
     </div>
 @endsection

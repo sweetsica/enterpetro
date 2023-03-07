@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Bill extends Model
 {
     use HasFactory;
+
+    protected $guarded = [''];
+
+    public function shellType()
+    {
+        return $this->belongsTo(ShellType::class, 'shellType');
+    }
 }

@@ -12,8 +12,11 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-30">
-                        <div class="card-body pt-30">
+                        <div class="card-body pt-30 justify-content-between d-flex">
                             <h4 class="font-20 ">Border Table</h4>
+                            <button type="submit" class="btn long mr-20" data-toggle="modal"
+                                    data-target="#originPriceModal">Thêm đơn hàng
+                            </button>
                         </div>
                         <div class="table-responsive">
                             <!-- Invoice List Table -->
@@ -21,27 +24,102 @@
                                 <thead>
                                 <tr>
                                     <th>Tên khách</th>
-                                    <th>Đơn giá</th>
+                                    <th>Địa chỉ</th>
                                     <th>Loại bình</th>
                                     <th>Số bình</th>
                                     <th>Tổng kg</th>
+                                    <th>Giá bán</th>
                                     <th>Tổng bill</th>
                                     <th>#</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td>Nguyễn Văn A</td>
-                                    <td>190000</td>
-                                    <td>Bình to 25 Kg</td>
-                                    <td>10</td>
-                                    <td>250</td>
-                                    <td>47500000</td>
-                                    <td><a href="invoice-details.html" class="details-btn">View Details <i class="icofont-arrow-right"></i></a></td>
-                                </tr>
+                                @foreach($dataBills as $dataBill)
+                                    <tr>
+                                        <td>{{$dataBill['nameCustomer']}}</td>
+                                        <td>{{$dataBill['address']}}</td>
+                                        <td>{{$dataBill['shellType']}}</td>
+                                        <td>{{$dataBill['ammount']}}</td>
+                                        <td>{{$dataBill['massTotal']}}</td>
+                                        <td>{{number_format( $dataBill['salePrice'] , 0 , ',' , '.' )}}</td>
+                                        <td>{{number_format( $dataBill['bill'] , 0 , ',' , '.' )}}đ</td>
+                                        <td><a href="invoice-details.html" class="details-btn">Chi tiết <i class="icofont-arrow-right"></i></a></td>
+                                    </tr>
+                                @endforeach
+
                                 </tbody>
                             </table>
                             <!-- End Invoice List Table -->
+                            <div id="originPriceModal" class="modal fade">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <!-- Modal Body -->
+                                        <div class="modal-body">
+                                            <form action="{{ route('addBill') }}" method="POST">
+                                                @csrf
+                                                @method('POST')
+                                                <div class="contact-account-setting media-body">
+                                                    <h4 class="mb-4">Đơn hàng</h4>
+                                                    <div class="mb-4">
+                                                        <label class="bold black mb-2" for="nameCustomer">Tên khách</label>
+                                                        <input type="text" id="nameCustomer" class="theme-input-style"
+                                                               placeholder="Họ tên" name="nameCustomer" required>
+                                                    </div>
+
+                                                    <div class="mb-4">
+                                                        <label class="bold black mb-2" for="massShell">Loại bình</label>
+                                                        <select class="theme-input-style" id="shellType" required name="shellType">
+                                                            <option selected disabled>-Chọn-</option>
+                                                        @foreach($shellTypes as $shellType)
+                                                            <option class="theme-input-style" value="{{$shellType['id']}}">{{$shellType['name']}} - {{$shellType['massShell']}}{{$shellType['unitShell']}}</option>
+                                                        @endforeach
+                                                        </select>
+
+                                                    </div>
+
+                                                    <div class="mb-4">
+                                                        <label class="bold black mb-2" for="ammount">Số lượng</label>
+                                                        <input type="number" id="ammount" class="theme-input-style"
+                                                               placeholder="Bình" name="ammount" required>
+                                                    </div>
+
+                                                    <div class="mb-4 col-xs-6">
+                                                        <label class="bold black mb-2" for="storageId">Chọn từ kho</label>
+                                                        <select class="theme-input-style" id="storageId" required name="storageId">
+                                                            <option selected disabled>-Chọn-</option>
+                                                            @foreach($storages as $storage)
+                                                                <option class="theme-input-style" placeholder="Chọn" value="{{$storage['id']}}">{{$storage['name']}}</option>
+                                                            @endforeach
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="mb-4">
+{{--                                                        @dd($minSaleOrigin)--}}
+{{--                                                        <label class="bold black mb-2" for="salePrice">Giá bán (Giá hôm nay: {{ $minSaleOrigin->minSaleOrigin }}</label>--}}
+                                                        <input type="number" id="salePrice" class="theme-input-style"
+                                                               placeholder="VND" name="salePrice" required>
+                                                    </div>
+
+                                                    <div class="mb-4">
+                                                        <label class="bold black mb-2" for="address">Địa chỉ giao</label>
+                                                        <input type="text" id="address" class="theme-input-style"
+                                                               placeholder="Địa chỉ nhận" name="address" required>
+                                                    </div>
+
+                                                    <input hidden name="idSale" value="1">
+
+                                                    <div class="">
+                                                        <button class="btn mr-4">Lên đơn</button>
+                                                        <a href="#" class="cancel font-14 bold"
+                                                           data-dismiss="modal">Cancel</a>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- End Modal Body -->
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

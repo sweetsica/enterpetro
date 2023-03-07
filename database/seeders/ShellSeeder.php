@@ -16,7 +16,7 @@ class ShellSeeder extends Seeder
     {
         DB::table('shell_types')->insert([
             'id' => 1,
-            'name' => 'Bình to 20kg',
+            'name' => 'Bình to',
             'code' => 'BT20',
             'massShell' => '20',
             'unitShell' => 'kg',
@@ -25,7 +25,7 @@ class ShellSeeder extends Seeder
         ]);
         DB::table('shell_types')->insert([
             'id' => 2,
-            'name' => 'Bình to 25kg',
+            'name' => 'Bình to',
             'code' => 'BT25',
             'massShell' => '25',
             'unitShell' => 'kg',
@@ -34,7 +34,7 @@ class ShellSeeder extends Seeder
         ]);
         DB::table('shell_types')->insert([
             'id' => 3,
-            'name' => 'Bình to 27kg',
+            'name' => 'Bình to',
             'code' => 'BT27',
             'massShell' => '27',
             'unitShell' => 'kg',
@@ -43,7 +43,7 @@ class ShellSeeder extends Seeder
         ]);
         DB::table('shell_types')->insert([
             'id' => 4,
-            'name' => 'Bình to 28kg',
+            'name' => 'Bình to',
             'code' => 'BT28',
             'massShell' => '28',
             'unitShell' => 'kg',
@@ -52,7 +52,7 @@ class ShellSeeder extends Seeder
         ]);
         DB::table('shell_types')->insert([
             'id' => 5,
-            'name' => 'Bình nhỏ 2kg',
+            'name' => 'Bình nhỏ',
             'code' => 'BN2',
             'massShell' => '2',
             'unitShell' => 'kg',
@@ -61,7 +61,7 @@ class ShellSeeder extends Seeder
         ]);
         DB::table('shell_types')->insert([
             'id' => 6,
-            'name' => 'Bình nhỏ 3kg',
+            'name' => 'Bình nhỏ',
             'code' => 'BN3',
             'massShell' => '3',
             'unitShell' => 'kg',
@@ -70,7 +70,7 @@ class ShellSeeder extends Seeder
         ]);
         DB::table('shell_types')->insert([
             'id' => 7,
-            'name' => 'Bình nhỏ 4kg',
+            'name' => 'Bình nhỏ',
             'code' => 'BN4',
             'massShell' => '4',
             'unitShell' => 'kg',

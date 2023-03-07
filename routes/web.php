@@ -32,6 +32,10 @@ Route::get('/dashboard-ac', [TotalController::class,'index_ac'])->name('dashboar
 //Trang chủ salese
 Route::get('/dashboard-sa', [TotalController::class,'index_sa'])->name('dashboard-sa');
 
+//Danh sachs đơn
+Route::get('/bill', [BillController::class,'index'])->name('listBill');
+//Lên đơn
+Route::post('/bill/add', [BillController::class,'store'])->name('addBill');
 //Chi tiết đơn hàng
 Route::get('/bill-details', [BillController::class,'show'])->name('billDetails');
 
@@ -40,3 +44,4 @@ Route::get('/bill-details', [BillController::class,'show'])->name('billDetails')
 Route::get('/price', [PriceDailyController::class,'index'])->name('priceDaily');
 //Thêm mới giá
 Route::post('/price/add', [PriceDailyController::class,'store'])->name('addPriceDaily');
+

@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             ShellSeeder::class,/*loại bình*/
             PriceSeeder::class,/*data chung*/
+            UserSeeder::class,/*người dùng*/
         ]);
     }
 }

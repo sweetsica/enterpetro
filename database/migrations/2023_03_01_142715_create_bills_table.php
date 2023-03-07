@@ -15,10 +15,13 @@ return new class extends Migration
             $table->id();
             $table->dateTime('inStoreDate')->nullable();//Ngày nhập
             $table->string('nameCustomer')->nullable();//Tên khách
+            $table->string('address')->nullable();//Địa chỉ
+            $table->string('contact')->nullable();//Liên hệ
             $table->string('unit')->nullable();//Đơn vị tính
             $table->integer('shellType')->nullable();//Khối lượng
             $table->integer('ammount')->nullable();//Số lượng
             $table->integer('massTotal')->nullable();//Tổng kg
+            $table->integer('storageId')->nullable();//Tổng kg
             $table->integer('salePrice')->nullable();//Đơn giá bán
             $table->integer('income')->nullable();//Doanh thu
             $table->integer('bill')->nullable();//Thanh toán
@@ -32,6 +35,7 @@ return new class extends Migration
             $table->integer('moneyPaidTotal')->nullable();//Tổng tiền chi thanh toán nhập hàng
             $table->integer('moneyPaidDebt')->nullable();//Chênh dư nợ tiền thanh toán nhập hàng
             $table->integer('reciveInfo')->nullable();//Thông tin nhận tiền
+            $table->integer('idSale')->nullable();//id nhân viên bán
             $table->string('note')->nullable();//Ghi chú
 
             $table->timestamps();
