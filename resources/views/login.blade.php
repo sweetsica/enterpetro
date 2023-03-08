@@ -33,18 +33,19 @@
             <div class="col-xl-7 col-lg-9">
                 <h4 class="mb-5 font-20">Welcome To Enter Petro</h4>
 
-                <form action="#">
+                <form action="{{route('loginCheck')}}" method="post">
+                    @csrf
                     <!-- Form Group -->
                     <div class="form-group mb-20">
                         <label for="email" class="mb-2 font-14 bold black">Email Address</label>
-                        <input type="email" id="email" class="theme-input-style" placeholder="Email Address">
+                        <input type="email" id="email" class="theme-input-style" placeholder="Email Address" name="email">
                     </div>
                     <!-- End Form Group -->
 
                     <!-- Form Group -->
                     <div class="form-group mb-20">
                         <label for="password" class="mb-2 font-14 bold black">Password</label>
-                        <input type="password" id="password" class="theme-input-style" placeholder="********">
+                        <input type="password" id="password" class="theme-input-style" placeholder="********" name="password">
                     </div>
                     <!-- End Form Group -->
 

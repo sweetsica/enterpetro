@@ -15,10 +15,11 @@
                         <div class="card-body bg-white">
                             <div class="d-flex flex-column flex-xl-row justify-content-xl-between mb-2">
                                 <div class="mb-4 mb-xl-0">
-                                    <h4 class="mb-1">Marketing Campaigns</h4>
-                                    <p class="font-14">I must explain to you how all this mistaken idea of denouncing
-                                        pleasure at
-                                        <span class="full-date ml-2">15 Nov 2019 10:35am</span>
+                                    <h4 class="mb-1">Thông số tổng quan</h4>
+                                    <p class="font-14">Mức giá đang áp dụng: Mua vào
+                                        <span class="full-date ml-2">{{number_format( $priceOrigin->priceOrigin , 0 , ',' , '.' )}}đ</span>
+                                        Giá bán tối thiểu
+                                        <span class="full-date ml-2">{{number_format( $priceOrigin->minSaleOrigin , 0 , ',' , '.' )}}đ</span>
                                     </p>
                                 </div>
 
@@ -40,8 +41,8 @@
                                             <!-- End Progress Bar -->
                                         </div>
                                         <div class="">
-                                            <p class="mb-1 font-14 l-height1">Products</p>
-                                            <h4>264</h4>
+                                            <p class="mb-1 font-14 l-height1">Khối lượng bán tuần</p>
+                                            <h4>{{number_format( $totalMass , 000 , ',' , '.' )}} kg</h4>
                                         </div>
                                     </div>
 
@@ -62,8 +63,8 @@
                                             <!-- End Progress Bar -->
                                         </div>
                                         <div class="">
-                                            <p class="mb-1 font-14 l-height1">Earned</p>
-                                            <h4>$16k</h4>
+                                            <p class="mb-1 font-14 l-height1">Tổng doanh thu</p>
+                                            <h4>{{number_format( $totalBill , 0 , ',' , '.' )}}đ</h4>
                                         </div>
                                     </div>
 
@@ -84,8 +85,8 @@
                                             <!-- End Progress Bar -->
                                         </div>
                                         <div class="">
-                                            <p class="mb-1 font-14 l-height1">Orders</p>
-                                            <h4>$4.6k</h4>
+                                            <p class="mb-1 font-14 l-height1">Tổng tiền nhập hàng</p>
+                                            <h4>{{number_format( $totalBuy , 0 , ',' , '.' )}}đ</h4>
                                         </div>
                                     </div>
 
@@ -106,8 +107,8 @@
                                             <!-- End Progress Bar -->
                                         </div>
                                         <div class="">
-                                            <p class="mb-1 font-14 l-height1">Delivered</p>
-                                            <h4>$3.4k</h4>
+                                            <p class="mb-1 font-14 l-height1">Tổng lãi</p>
+                                            <h4>{{number_format( $totalInterest , 0 , ',' , '.' )}}đ</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -150,190 +151,29 @@
                                                 <td>{{ $dataBill->shellType }}</td>
                                                 <td>{{ $dataBill->ammount }}</td>
                                                 <td>{{ $dataBill->massTotal }}</td>
-                                                <td>{{ $dataBill->priceSale }}</td>
-                                                <td>{{ $dataBill->income }}</td>
-                                                <td>{{ $dataBill->bill }}</td>
+                                                <td>{{ number_format( $dataBill->priceSale , 0 , ',' , '.' ) }}</td>
+                                                <td>{{ number_format( $dataBill->income , 0 , ',' , '.' ) }}</td>
+                                                <td>{{ number_format( $dataBill->bill , 0 , ',' , '.' ) }}</td>
                                                 <td>{{ $dataBill->debt }}</td>
                                                 <td>{{ $dataBill->shellDebt }}</td>
                                                 <td>{{ $dataBill->shellDebtAmmount }}</td>
-                                                <td>{{ $dataBill->buyPrice }}</td>
-                                                <td>{{ $dataBill->buyTotal }}</td>
-                                                <td>{{ $dataBill->moneySent }}</td>
-                                                <td>{{ $dataBill->moneyPaidTotal }}</td>
-                                                <td>{{ $dataBill->moneyPaidDebt }}</td>
+                                                <td>{{ number_format( $dataBill->buyPrice , 0 , ',' , '.' ) }}</td>
+                                                <td>{{ number_format( $dataBill->buyTotal , 0 , ',' , '.' ) }}</td>
+                                                <td>{{ number_format( $dataBill->moneySent , 0 , ',' , '.' ) }}</td>
+                                                <td>{{ number_format( $dataBill->moneyPaidTotal , 0 , ',' , '.' ) }}</td>
+                                                <td>{{ number_format( $dataBill->moneyPaidDebt , 0 , ',' , '.' ) }}</td>
                                                 <td>{{ $dataBill->reciveInfo }}</td>
                                                 <td>{{ $dataBill->note }}</td>
                                             </tr>
                                         @endforeach
                                     </tbody>
                                 </table>
-
-
-                                {{--                                <!-- Statistics Row --> --}}
-                                {{--                                <div class="statistic-row pb-2"> --}}
-                                {{--                                    <div><img src="../../assets/img/product/rp4.png" alt=""> Variegated Stripe Grill Set</div> --}}
-                                {{--                                    <div>4154 81** **** 7617</div> --}}
-                                {{--                                    <div>$3265</div> --}}
-                                {{--                                    <div>1458 <img src="../../assets/img/svg/table-down-arrow-red.svg" alt="" class="svg"></div> --}}
-                                {{--                                    <div class="text-center"><button type="button" class="status-btn completed">Completed</button></div> --}}
-                                {{--                                    <div> --}}
-                                {{--                                        <!-- Dropdown Button --> --}}
-                                {{--                                        <div class="dropdown-button"> --}}
-                                {{--                                            <a href="#" class="d-flex align-items-center justify-content-end" data-toggle="dropdown"> --}}
-                                {{--                                                <div class="menu-icon mr-0"> --}}
-                                {{--                                                    <span></span> --}}
-                                {{--                                                    <span></span> --}}
-                                {{--                                                    <span></span> --}}
-                                {{--                                                </div> --}}
-                                {{--                                            </a> --}}
-                                {{--                                            <div class="dropdown-menu dropdown-menu-right"> --}}
-                                {{--                                                <a href="#">Daily</a> --}}
-                                {{--                                                <a href="#">Sort By</a> --}}
-                                {{--                                                <a href="#">Monthly</a> --}}
-                                {{--                                            </div> --}}
-                                {{--                                        </div> --}}
-                                {{--                                        <!-- End Dropdown Button --> --}}
-                                {{--                                    </div> --}}
-                                {{--                                </div> --}}
-                                {{--                                <!-- End Statistics Row --> --}}
-
                                 <!-- Statistics Row -->
-
                             </div>
                             <!-- End Product Statistics -->
                         </div>
                     </div>
                     <!-- End Card -->
-
-                    <!-- Contact Add New PopUp -->
-                    <div id="contactAddModal" class="modal fade">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <!-- Modal Body -->
-                                <div class="modal-body">
-                                    <form action="#">
-
-                                        <div class="media flex-column flex-sm-row">
-                                            <div class="contact-account-setting media-body">
-                                                <div class="row">
-                                                    <div class="col-xl-12">
-                                                        <h4 class="font-20 mb-4">Nhập giá</h4>
-                                                        <!-- Form Element -->
-                                                        <div class="form-element py-30 mb-30">
-                                                            <form action="#" class="repeater-default">
-                                                                <!-- Repeater Heading -->
-                                                                <div class="repeater-heading">
-
-                                                                </div>
-
-                                                                <!-- Repeater Html Start -->
-                                                                <div data-repeater-list="group-a">
-                                                                    <div class="row">
-                                                                        <div class="col-md-11">
-                                                                            <div class="row">
-                                                                                <!-- Form Group -->
-                                                                                <div class="col-md-4">
-                                                                                    <label for="inputName5"
-                                                                                        class="bold mb-2">Giá nhập</label>
-                                                                                </div>
-                                                                                <!-- End Form Group -->
-
-                                                                                <!-- Form Group -->
-                                                                                <div class="col-md-4">
-                                                                                    <label for="inputMobile3"
-                                                                                        class="bold mb-2">Giá bán</label>
-                                                                                </div>
-                                                                                <!-- End Form Group -->
-
-                                                                                <!-- Form Group -->
-                                                                                <div class="col-md-4">
-                                                                                    <label for="inputEmail3"
-                                                                                        class="bold mb-2" disabled>Ngày
-                                                                                        tạo</label>
-                                                                                </div>
-                                                                                <!-- End Form Group -->
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-
-                                                                    <!-- Repeater Items -->
-                                                                    <div data-repeater-item>
-                                                                        <!-- Repeater Content -->
-                                                                        <div class="item-content align-items-center row">
-                                                                            <div class="col-md-11">
-                                                                                <div class="row">
-                                                                                    <!-- Form Group -->
-                                                                                    <div class="form-group mb-20 col-md-4">
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            id="inputName5"
-                                                                                            placeholder="Type Your Name">
-                                                                                    </div>
-                                                                                    <!-- End Form Group -->
-
-                                                                                    <!-- Form Group -->
-                                                                                    <div class="form-group mb-20 col-md-4">
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            id="inputMobile3"
-                                                                                            placeholder="Contact Number">
-                                                                                    </div>
-                                                                                    <!-- End Form Group -->
-
-                                                                                    <!-- Form Group -->
-                                                                                    <div class="mb-md-20 col-md-4">
-                                                                                        <input type="text"
-                                                                                            class="form-control"
-                                                                                            id="inputMobile3"
-                                                                                            placeholder="02-03-2023"
-                                                                                            disabled>
-                                                                                    </div>
-                                                                                    <!-- End Form Group -->
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="col-md-1 mb-20">
-                                                                                <!-- Repeater Remove Btn -->
-                                                                                <div class="repeater-remove-btn">
-                                                                                    <button data-repeater-delete
-                                                                                        class="remove-btn bg-transparent">
-                                                                                        <img src="../../assets/img/svg/remove.svg"
-                                                                                            alt="" class="svg">
-                                                                                    </button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                    <!-- End Repeater Items -->
-                                                                </div>
-
-                                                                <!-- Repeater End -->
-                                                                <div class="mt-md-2">
-                                                                    <button data-repeater-create type="button"
-                                                                        class="repeater-add-btn btn-circle position-relative">
-                                                                        <img src="../../assets/img/svg/plus_white.svg"
-                                                                            alt="" class="svg">
-                                                                    </button>
-                                                                    <span class="bold c2 ml-1">Add New</span>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                        <!-- End Form Element -->
-                                                    </div>
-                                                </div>
-                                                <div class="align-items-end">
-                                                    <a href="#" class="btn mr-4">Lên đơn</a>
-                                                    <a href="#" class="cancel font-14 bold"
-                                                        data-dismiss="modal">Hủy</a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                                <!-- End Modal Body -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- End Contact Add New PopUp -->
                 </div>
             </div>
         </div>

@@ -34,18 +34,20 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($dataBills as $dataBill)
-                                    <tr>
-                                        <td>{{$dataBill['nameCustomer']}}</td>
-                                        <td>{{$dataBill['address']}}</td>
-                                        <td>{{$dataBill['shellType']}}</td>
-                                        <td>{{$dataBill['ammount']}}</td>
-                                        <td>{{$dataBill['massTotal']}}</td>
-                                        <td>{{number_format( $dataBill['salePrice'] , 0 , ',' , '.' )}}</td>
-                                        <td>{{number_format( $dataBill['bill'] , 0 , ',' , '.' )}}đ</td>
-                                        <td><a href="invoice-details.html" class="details-btn">Chi tiết <i class="icofont-arrow-right"></i></a></td>
-                                    </tr>
-                                @endforeach
+                                @if($dataBills)
+                                    @foreach($dataBills as $dataBill)
+                                        <tr>
+                                            <td>{{$dataBill['nameCustomer']}}</td>
+                                            <td>{{$dataBill['address']}}</td>
+                                            <td>{{$dataBill['shellType']}}</td>
+                                            <td>{{$dataBill['ammount']}}</td>
+                                            <td>{{$dataBill['massTotal']}}</td>
+                                            <td>{{number_format( $dataBill['salePrice'] , 0 , ',' , '.' )}}</td>
+                                            <td>{{number_format( $dataBill['bill'] , 0 , ',' , '.' )}}đ</td>
+                                            <td><a href="invoice-details.html" class="details-btn">Chi tiết <i class="icofont-arrow-right"></i></a></td>
+                                        </tr>
+                                    @endforeach
+                                @endif
 
                                 </tbody>
                             </table>

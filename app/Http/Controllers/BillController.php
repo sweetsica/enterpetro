@@ -8,6 +8,7 @@ use App\Models\ShellType;
 use App\Models\Storage;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BillController extends Controller
 {
@@ -38,6 +39,7 @@ class BillController extends Controller
     public function store(Request $request)
     {
 //      dd($request);
+        $userId = Auth::user()->id;
         $inStoreDate = Carbon::now();
         $unit = 'kg';
         $shellinfo = ShellType::find($request->shellType);
@@ -68,10 +70,10 @@ class BillController extends Controller
             'buyPrice' => $minSaleAllow,
             'buyTotal' => $buyTotal,
             'bill' => $bill,
+            'idSale' => $userId,
             'interest' => $bill - $buyTotal,
             'income' => $bill-$buyTotal,
             'address' => $request->address,
-            'idSale' => $request->idSale,
         ]);
         $databill->save();
         return redirect()->back();
@@ -98,7 +100,11 @@ class BillController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $data = $request->all();
+        $post = Bill::findOrFail($id);
+        $post->update($data);
+
+        return redirect()->route('listBill',['Đăng nhập thành công!']);
     }
 
     /**
