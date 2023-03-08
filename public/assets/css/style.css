@@ -3837,7 +3837,7 @@ a.text-dark:hover {
 ********************* */
 table {
   width: 100%;
-  max-width: 1330px;
+  max-width: 100%;
   font-size: 14px;
 }
 
