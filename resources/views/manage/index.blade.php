@@ -16,11 +16,13 @@
                             <div class="d-flex flex-column flex-xl-row justify-content-xl-between mb-2">
                                 <div class="mb-4 mb-xl-0">
                                     <h4 class="mb-1">Thông số tổng quan</h4>
+                                    @if(!is_null($priceOrigin))
                                     <p class="font-14">Mức giá đang áp dụng: Mua vào
                                         <span class="full-date ml-2">{{number_format( $priceOrigin->priceOrigin , 0 , ',' , '.' )}}đ</span>
                                         Giá bán tối thiểu
                                         <span class="full-date ml-2">{{number_format( $priceOrigin->minSaleOrigin , 0 , ',' , '.' )}}đ</span>
                                     </p>
+                                    @endif
                                 </div>
 
                                 <div class="d-flex align-items-center flex-wrap">
