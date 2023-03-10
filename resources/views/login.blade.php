@@ -25,6 +25,20 @@
     <!-- ======= MAIN STYLES ======= -->
     <link rel="stylesheet" href="{{asset('/assets/css/style.css')}}">
     <!-- ======= END MAIN STYLES ======= -->
+    <?php
+    if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
+        redirect()->action('TotalController@index_ad');
+    }
+    elseif(isset($_SESSION['role']) && $_SESSION['role'] == 'accounting'){
+        redirect()->action('TotalController@index_ac');
+    }
+    elseif(isset($_SESSION['role']) && $_SESSION['role'] == 'sale'){
+        redirect()->action('TotalController@index_sa');
+    }
+    else{
+        // do something
+    }
+    ?>
 @endsection
 
 @section('content')
@@ -50,9 +64,9 @@
                     <!-- End Form Group -->
 
                     <div class="mb-30">
-                        <a href="{{route('dashboard-ac')}}" class="light-btn mr-3 mb-20">Trang Kế toán</a>
-                        <a href="{{route('dashboard-sa')}}" class="light-btn style--two mb-20">Trang sale</a>
-                        <a href="{{route('dashboard-ad')}}" class="light-btn style--two mb-20">Trang admin</a>
+{{--                        <a href="{{route('dashboard-ac')}}" class="light-btn mr-3 mb-20">Trang Kế toán</a>--}}
+{{--                        <a href="{{route('dashboard-sa')}}" class="light-btn style--two mb-20">Trang sale</a>--}}
+{{--                        <a href="{{route('dashboard-ad')}}" class="light-btn style--two mb-20">Trang admin</a>--}}
                     </div>
 
                     <div class="d-flex align-items-center">

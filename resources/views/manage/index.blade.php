@@ -147,7 +147,7 @@
                                             <tr>
                                                 <td>{{ $dataBill->id }}</td>
                                                 <td>{{ $dataBill->nameCustomer }}</td>
-                                                <td>{{ $dataBill->id }}</td>
+                                                <td>{{ $dataBill->unit }}</td>
                                                 <td>{{ $dataBill->shellType }}</td>
                                                 <td>{{ $dataBill->ammount }}</td>
                                                 <td>{{ $dataBill->massTotal }}</td>

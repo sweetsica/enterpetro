@@ -23,6 +23,7 @@ use App\Http\Controllers\BillController;
 //Đăng nhập
 Route::get('/', [TotalController::class,'index'])->name('login');
 Route::post('/loginCheck', [TotalController::class,'checklogin'])->name('loginCheck');
+Route::get('/logout', [TotalController::class,'logout'])->name('logout');
 
 //Trang chủ kế toán tổng
 Route::get('/dashboard-ad', [TotalController::class,'index_ad'])->name('dashboard-ad');
@@ -41,6 +42,7 @@ Route::post('/bill/add', [BillController::class,'store'])->name('addBill');
 Route::get('/bill-details', [BillController::class,'show'])->name('billDetails');
 
 
+
 //Danh sách giá
 Route::get('/price', [PriceDailyController::class,'index'])->name('priceDaily');
 //Thêm mới giá
@@ -50,3 +52,5 @@ Route::post('/price/add', [PriceDailyController::class,'store'])->name('addPrice
 Route::get('/editor', function (){
    return view('manage.billDetail');
 });
+
+Route::get('/demo/editor',[BillController::class,'show']);

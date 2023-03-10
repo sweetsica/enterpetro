@@ -2,6 +2,9 @@
 <html lang="zxx">
 
 <head>
+@if(View::hasSection('content-css'))
+    @yield('content-header')
+@else()
     <!-- Page Title -->
     <title>Enter Petro </title>
 
@@ -27,7 +30,7 @@
     <!-- ======= MAIN STYLES ======= -->
     <link rel="stylesheet" href="{{asset('/assets/css/style.css')}}">
     <!-- ======= END MAIN STYLES ======= -->
-
+@endif
 </head>
 
 <body>
@@ -42,8 +45,8 @@
     <header class="header white-bg fixed-top d-flex align-content-center flex-wrap">
         <!-- Logo -->
         <div class="logo">
-            <a href="../../index.html" class="default-logo"><img src="{{asset('/assets/img/logo.png')}}" alt=""></a>
-            <a href="../../index.html" class="mobile-logo"><img src="{{asset('/assets/img/mobile-logo.png')}}" alt=""></a>
+            <a href="{{route('login')}}" class="default-logo"><img src="{{asset('/assets/img/logo.png')}}" alt=""></a>
+            <a href="{{route('login')}}" class="mobile-logo"><img src="{{asset('/assets/img/mobile-logo.png')}}" alt=""></a>
         </div>
         <!-- End Logo -->
 
@@ -164,7 +167,7 @@
                                 <li class="d-none d-lg-flex">
                                     <!-- Main Header Button -->
                                     <div class="main-header-btn ml-md-1">
-                                        <a href="#" class="btn">Pending Tasks</a>
+                                        <a href="{{route('logout')}}" class="btn">Đăng xuất</a>
                                     </div>
                                     <!-- End Main Header Button -->
                                 </li>
@@ -173,72 +176,72 @@
                                 </li>
                                 <li>
                                 </li>
-                                <li>
-                                    <!-- Main Header Notification -->
-                                    <div class="main-header-notification">
-                                        <a href="#" class="header-icon notification-icon" data-toggle="dropdown">
-                                            <span class="count" data-bg-img="../../assets/img/count-bg.png">!</span>
-                                            <img src="../../assets/img/svg/notification-icon.svg" alt="" class="svg">
-                                        </a>
-                                        <div class="dropdown-menu style--two dropdown-menu-right">
-                                            <!-- Dropdown Header -->
-                                            <div class="dropdown-header d-flex align-items-center justify-content-between">
-                                                <h5>5 New notifications</h5>
-                                                <a href="#" class="text-mute d-inline-block">Clear all</a>
-                                            </div>
-                                            <!-- End Dropdown Header -->
+{{--                                <li>--}}
+{{--                                    <!-- Main Header Notification -->--}}
+{{--                                    <div class="main-header-notification">--}}
+{{--                                        <a href="#" class="header-icon notification-icon" data-toggle="dropdown">--}}
+{{--                                            <span class="count" data-bg-img="../../assets/img/count-bg.png">!</span>--}}
+{{--                                            <img src="../../assets/img/svg/notification-icon.svg" alt="" class="svg">--}}
+{{--                                        </a>--}}
+{{--                                        <div class="dropdown-menu style--two dropdown-menu-right">--}}
+{{--                                            <!-- Dropdown Header -->--}}
+{{--                                            <div class="dropdown-header d-flex align-items-center justify-content-between">--}}
+{{--                                                <h5>5 New notifications</h5>--}}
+{{--                                                <a href="#" class="text-mute d-inline-block">Clear all</a>--}}
+{{--                                            </div>--}}
+{{--                                            <!-- End Dropdown Header -->--}}
 
-                                            <!-- Dropdown Body -->
-                                            <div class="dropdown-body">
-                                                <!-- Item Single -->
-                                                <a href="#" class="item-single d-flex align-items-center">
-                                                    <div class="content">
-                                                        <div class="mb-2">
-                                                            <p class="time">2 min ago</p>
-                                                        </div>
-                                                        <p class="main-text">Donec dapibus mauris id odio ornare tempus amet.</p>
-                                                    </div>
-                                                </a>
-                                                <!-- End Item Single -->
+{{--                                            <!-- Dropdown Body -->--}}
+{{--                                            <div class="dropdown-body">--}}
+{{--                                                <!-- Item Single -->--}}
+{{--                                                <a href="#" class="item-single d-flex align-items-center">--}}
+{{--                                                    <div class="content">--}}
+{{--                                                        <div class="mb-2">--}}
+{{--                                                            <p class="time">2 min ago</p>--}}
+{{--                                                        </div>--}}
+{{--                                                        <p class="main-text">Donec dapibus mauris id odio ornare tempus amet.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </a>--}}
+{{--                                                <!-- End Item Single -->--}}
 
-                                                <!-- Item Single -->
-                                                <a href="#" class="item-single d-flex align-items-center">
-                                                    <div class="content">
-                                                        <div class="mb-2">
-                                                            <p class="time">2 min ago</p>
-                                                        </div>
-                                                        <p class="main-text">Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo.</p>
-                                                    </div>
-                                                </a>
-                                                <!-- End Item Single -->
+{{--                                                <!-- Item Single -->--}}
+{{--                                                <a href="#" class="item-single d-flex align-items-center">--}}
+{{--                                                    <div class="content">--}}
+{{--                                                        <div class="mb-2">--}}
+{{--                                                            <p class="time">2 min ago</p>--}}
+{{--                                                        </div>--}}
+{{--                                                        <p class="main-text">Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </a>--}}
+{{--                                                <!-- End Item Single -->--}}
 
-                                                <!-- Item Single -->
-                                                <a href="#" class="item-single d-flex align-items-center">
-                                                    <div class="content">
-                                                        <div class="mb-2">
-                                                            <p class="time">2 min ago</p>
-                                                        </div>
-                                                        <p class="main-text">Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo.</p>
-                                                    </div>
-                                                </a>
-                                                <!-- End Item Single -->
+{{--                                                <!-- Item Single -->--}}
+{{--                                                <a href="#" class="item-single d-flex align-items-center">--}}
+{{--                                                    <div class="content">--}}
+{{--                                                        <div class="mb-2">--}}
+{{--                                                            <p class="time">2 min ago</p>--}}
+{{--                                                        </div>--}}
+{{--                                                        <p class="main-text">Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </a>--}}
+{{--                                                <!-- End Item Single -->--}}
 
-                                                <!-- Item Single -->
-                                                <a href="#" class="item-single d-flex align-items-center">
-                                                    <div class="content">
-                                                        <div class="mb-2">
-                                                            <p class="time">2 min ago</p>
-                                                        </div>
-                                                        <p class="main-text">Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo.</p>
-                                                    </div>
-                                                </a>
-                                                <!-- End Item Single -->
-                                            </div>
-                                            <!-- End Dropdown Body -->
-                                        </div>
-                                    </div>
-                                    <!-- End Main Header Notification -->
-                                </li>
+{{--                                                <!-- Item Single -->--}}
+{{--                                                <a href="#" class="item-single d-flex align-items-center">--}}
+{{--                                                    <div class="content">--}}
+{{--                                                        <div class="mb-2">--}}
+{{--                                                            <p class="time">2 min ago</p>--}}
+{{--                                                        </div>--}}
+{{--                                                        <p class="main-text">Donec dapibus mauris id odio ornare tempus. Duis sit amet accumsan justo.</p>--}}
+{{--                                                    </div>--}}
+{{--                                                </a>--}}
+{{--                                                <!-- End Item Single -->--}}
+{{--                                            </div>--}}
+{{--                                            <!-- End Dropdown Body -->--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                    <!-- End Main Header Notification -->--}}
+{{--                                </li>--}}
                             </ul>
                         </div>
                         <!-- End Header Right -->
@@ -269,7 +272,9 @@
     <!-- End Footer -->
 </div>
 <!-- End wrapper -->
-
+@if(View::hasSection('content-footer'))
+    @yield('content-footer')
+@else()
 <!-- ======= BEGIN GLOBAL MANDATORY SCRIPTS ======= -->
 <script src="{{asset('assets/js/jquery.min.js')}}"></script>
 <script src="{{asset('assets/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -281,8 +286,8 @@
 <script src="{{asset('assets/plugins/jquery-repeater/repeater.min.js')}}"></script>
 <script src="{{asset('assets/plugins/jquery-repeater/custom-repeater.js')}}"></script>
 <!-- ======= End BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
+@endif
 
-@yield('footer-script')
 </body>
 
 </html>

@@ -68,23 +68,23 @@
                                                     <input type="number" id="minSaleOrigin" class="theme-input-style"
                                                            placeholder="Giá bán" name="minSaleOrigin" required>
                                                 </div>
-                                                <div class="mb-30">
-                                                    <label class="bold black mb-2">Ngày nhập</label>
-                                                    <div class="date datepicker dashboard-date style--two"
-                                                         id="datePickerExample">
-                                                            <span class="input-group-addon mr-0"><img
-                                                                    src="{{asset('assets/img/svg/calender.svg')}}"
-                                                                    alt=""
-                                                                    class="svg"></span>
-                                                        <input id="datePicker" type="text" class="pl-2"
-                                                               required readonly name="createdDate">
-                                                    </div>
-                                                </div>
+{{--                                                <div class="mb-30">--}}
+{{--                                                    <label class="bold black mb-2">Ngày nhập</label>--}}
+{{--                                                    <div class="date datepicker dashboard-date style--two"--}}
+{{--                                                         id="datePickerExample">--}}
+{{--                                                            <span class="input-group-addon mr-0"><img--}}
+{{--                                                                    src="{{asset('assets/img/svg/calender.svg')}}"--}}
+{{--                                                                    alt=""--}}
+{{--                                                                    class="svg"></span>--}}
+{{--                                                        <input id="datePicker" type="text" class="pl-2"--}}
+{{--                                                               required readonly name="createdDate">--}}
+{{--                                                    </div>--}}
+{{--                                                </div>--}}
 
                                                 <div class="">
-                                                    <button class="btn mr-4">Save Changes</button>
+                                                    <button class="btn mr-4">Báo giá</button>
                                                     <a href="#" class="cancel font-14 bold"
-                                                       data-dismiss="modal">Cancel</a>
+                                                       data-dismiss="modal">Hủy</a>
                                                 </div>
                                             </div>
                                         </form>

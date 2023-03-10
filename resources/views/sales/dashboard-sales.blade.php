@@ -12,15 +12,18 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-30">
+{{--                        @dd($priceOrigin)--}}
+                        @if(!is_null($priceOrigin))
                         <div class="card-body pt-30 justify-content-between d-flex">
-                            <h4 class="font-20 ">Border Table</h4>
+                            <h4 class="font-20 ">Đơn hàng - (Giá hôm nay: {{ number_format($priceOrigin['minSaleOrigin'], 0 , ',' , '.' ) }}đ)</h4>
                             <button type="submit" class="btn long mr-20" data-toggle="modal"
-                                    data-target="#originPriceModal">Thêm đơn hàng
+                                    data-target="#originPriceModal">Thêm đơn
                             </button>
                         </div>
+                        @endif
                         <div class="table-responsive">
                             <!-- Invoice List Table -->
-                            <table class="text-nowrap table-bordered dh-table">
+                            <table class="text-nowrap table-bordered dh-table" style="max-width: none">
                                 <thead>
                                 <tr>
                                     <th>Tên khách</th>
@@ -30,7 +33,9 @@
                                     <th>Tổng kg</th>
                                     <th>Giá bán</th>
                                     <th>Tổng bill</th>
-                                    <th>#</th>
+                                    <th>Tiền nợ</th>
+                                    <th>Ghi chú</th>
+{{--                                    <th>#</th>--}}
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -44,7 +49,9 @@
                                             <td>{{$dataBill['massTotal']}}</td>
                                             <td>{{number_format( $dataBill['salePrice'] , 0 , ',' , '.' )}}</td>
                                             <td>{{number_format( $dataBill['bill'] , 0 , ',' , '.' )}}đ</td>
-                                            <td><a href="invoice-details.html" class="details-btn">Chi tiết <i class="icofont-arrow-right"></i></a></td>
+{{--                                            <td><a href="invoice-details.html" class="details-btn">Chi tiết <i class="icofont-arrow-right"></i></a></td>--}}
+                                            <td>{{number_format( $dataBill['debt'] , 0 , ',' , '.' )}}đ</td>
+                                            <td>{{$dataBill['note']}}</td>
                                         </tr>
                                     @endforeach
                                 @endif
@@ -97,7 +104,9 @@
 
                                                     <div class="mb-4">
 {{--                                                        @dd($minSaleOrigin)--}}
-{{--                                                        <label class="bold black mb-2" for="salePrice">Giá bán (Giá hôm nay: {{ $minSaleOrigin->minSaleOrigin }}</label>--}}
+                                                        @if(!is_null($priceOrigin))
+                                                        <label class="bold black mb-2" for="salePrice">Giá bán (Giá hôm nay: {{ number_format($priceOrigin['minSaleOrigin'], 0 , ',' , '.' ) }}đ)</label>
+                                                        @endif
                                                         <input type="number" id="salePrice" class="theme-input-style"
                                                                placeholder="VND" name="salePrice" required>
                                                     </div>
@@ -108,7 +117,19 @@
                                                                placeholder="Địa chỉ nhận" name="address" required>
                                                     </div>
 
-                                                    <input hidden name="idSale" value="1">
+                                                    <div class="mb-4">
+                                                        <label class="bold black mb-2" for="address">Tiền nợ</label>
+                                                        <input type="text" id="address" class="theme-input-style"
+                                                               placeholder="đ" name="debt" required>
+                                                    </div>
+
+                                                    <div class="mb-4">
+                                                        <label class="bold black mb-2" for="address">Ghi chú</label>
+                                                        <input type="text" id="address" class="theme-input-style"
+                                                               placeholder="..." name="note" required>
+                                                    </div>
+
+                                                    <input hidden name="idSale" value="@if(session('userId')){{ session('userId')}}@endif">
 
                                                     <div class="">
                                                         <button class="btn mr-4">Lên đơn</button>
@@ -136,4 +157,9 @@
 
     <script src="{{asset('edittable/jquery.slimscroll.js')}}"></script>
     <script src="{{asset('edittable/edit-task-table-data.js')}}"></script>
+
+
+    <script src="{{asset('assets/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
+    <script src="{{asset('assets/js/script.js')}}"></script>
 @endsection

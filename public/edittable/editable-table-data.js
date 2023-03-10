@@ -58,11 +58,8 @@ $.fn.editableTableWidget = function (options) {
                 if (active.text() === text || editor.hasClass('error')) {
                     return true;
                 }
-
-                const apiUrl = $('#edit_task_datable').data('update-url').replace('http://', 'https://');
-                console.log(apiUrl);
-
-                let editorInput = $(`#edit_task_datable_input`);
+                const apiUrl = $('#edit_datable_1').data('update-url');
+                let editorInput = $(`#edit_datable_1_input`);
                 const data = {
                     id : selectedId
                 }
@@ -161,11 +158,11 @@ const options = {
     cloneProperties: ['padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right',
         'text-align', 'font', 'font-size', 'font-family', 'font-weight',
         'border', 'border-top', 'border-bottom', 'border-left', 'border-right'],
-    editor: $('<input id="edit_task_datable_input">'),
-    idInput: 'edit_task_datable_input'
+    editor: $('<input id="edit_datable_1_input">'),
+    idInput: 'edit_datable_1_input'
 }
-// init data base according mindmup-editable.js
-$('#edit_task_datable').editableTableWidget(options);
+// init data base according mindmup-edittable.js
+$('#edit_datable_1').editableTableWidget(options);
 
 // $(document).ready(function(){
 // 	$('#edit_datable_2').DataTable();

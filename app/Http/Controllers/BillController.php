@@ -6,6 +6,7 @@ use App\Models\Bill;
 use App\Models\PriceOrigin;
 use App\Models\ShellType;
 use App\Models\Storage;
+use App\Traits\CheckLatestPriceOrigin;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,7 +19,7 @@ class BillController extends Controller
     public function index()
     {
         $dataBills = Bill::all();
-        $priceOrigin = PriceOrigin::get('minSaleOrigin')->last();
+        $priceOrigin = PriceOrigin::get()->last();
         $shellTypes = ShellType::all();
         $storages = Storage::all();
 //        return view('manage.index')->with('minSaleOrigin', $priceOrigin)->with(compact('dataBills'));
@@ -82,9 +83,14 @@ class BillController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show()
     {
-        //
+        $dataBills = Bill::all();
+        $priceOrigin = PriceOrigin::get('minSaleOrigin')->last();
+        $shellTypes = ShellType::all();
+        $storages = Storage::all();
+//        return view('manage.index')->with('minSaleOrigin', $priceOrigin)->with(compact('dataBills'));
+        return view('manage.billDetail')->with(compact('dataBills','shellTypes','storages','priceOrigin'));
     }
 
     /**
@@ -98,13 +104,15 @@ class BillController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request)
     {
-        $data = $request->all();
-        $post = Bill::findOrFail($id);
-        $post->update($data);
 
-        return redirect()->route('listBill',['Đăng nhập thành công!']);
+        $bill = Bill::find($request->id);
+        if (!$bill) {
+            return response()->json('failed');
+        }
+
+        return response()->json($bill->update($request->all()));
     }
 
     /**

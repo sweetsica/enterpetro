@@ -49,11 +49,12 @@
                                 </thead>
 
                                 <tbody data-repeater-list="group-a" class="bg-white">
+                                @foreach($dataBills as $dataBill)
                                 <tr data-repeater-item>
-                                    <td class="bold">#01</td>
-                                    <td><input type="text" class="theme-input-style style--three" value="PSD to html conversion"></td>
-                                    <td><input type="text" class="theme-input-style style--three" value="26"></td>
-                                    <td><input type="text" class="theme-input-style style--three" value="$64.3"></td>
+                                    <td class="bold">{{$dataBill['id']}}</td>
+                                    <td><input type="text" class="theme-input-style style--three" value="{{$dataBill['inStoreDate']}}"></td>
+                                    <td><input type="text" class="theme-input-style style--three" value="{{$dataBill['nameCustomer']}}"></td>
+                                    <td><input type="text" class="theme-input-style style--three" value="{{$dataBill['address']}}"></td>
                                     <td class="text-right">
                                         <div class="">
                                             <span>$2654.36</span>
@@ -63,21 +64,9 @@
                                         </div>
                                     </td>
                                 </tr>
+                                @endforeach
 
-                                <tr data-repeater-item>
-                                    <td class="bold">#02</td>
-                                    <td><input type="text" class="theme-input-style style--three" value="PSD to html conversion"></td>
-                                    <td><input type="text" class="theme-input-style style--three" value="26"></td>
-                                    <td><input type="text" class="theme-input-style style--three" value="$64.3"></td>
-                                    <td class="text-right">
-                                        <div class="">
-                                            <span>$2654.36</span>
-                                            <span data-repeater-delete class="tr-close">
-                                                                <img src="../../assets/img/svg/table-colse.svg" alt="" class="svg">
-                                                            </span>
-                                        </div>
-                                    </td>
-                                </tr>
+
                                 </tbody>
                             </table>
                             <!-- End Invoice List Table -->

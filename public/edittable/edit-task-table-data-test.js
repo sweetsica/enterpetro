@@ -4,6 +4,7 @@
 /*global $, window*/
 $.fn.editableTableWidget = function (options) {
     'use strict';
+    let input = null;
     let selectedField = null;
     let selectedId = null;
 
@@ -24,7 +25,7 @@ $.fn.editableTableWidget = function (options) {
                     return true;
                 }
 
-                active = element.find('td:focus');
+                active = element.find('input:focus');
                 if (active.length) {
                     editor.val(active.text())
                         .removeClass('error')
@@ -38,6 +39,7 @@ $.fn.editableTableWidget = function (options) {
                     if (select.target) {
                         const id = select.target.getAttribute("data-id");
                         const field = select.target.getAttribute('data-name');
+                        input = select.target;
                         selectedField = field;
                         selectedId = id;
 
@@ -58,13 +60,21 @@ $.fn.editableTableWidget = function (options) {
                 if (active.text() === text || editor.hasClass('error')) {
                     return true;
                 }
-                const apiUrl = $('#edit_datable_1').data('update-url');
-                let editorInput = $(`#edit_datable_1_input`);
+
+                console.log('tap trung vao');
+                let apiUrl = $('#edit_task_datable').data('update-url');
+                if(location.protocol.includes('https')) {
+                    apiUrl = apiUrl.replace('http://', 'https://');
+                }
+                console.log(apiUrl);
+
+                let editorInput = $(`#edit_task_datable_input`);
                 const data = {
                     id : selectedId
                 }
                 data[selectedField] = editorInput.val();
                 $.post(apiUrl, data);
+                input.value = editorInput.val()
 
                 originalContent = active.html();
                 active.text(text).trigger(evt, text);
@@ -158,11 +168,11 @@ const options = {
     cloneProperties: ['padding', 'padding-top', 'padding-bottom', 'padding-left', 'padding-right',
         'text-align', 'font', 'font-size', 'font-family', 'font-weight',
         'border', 'border-top', 'border-bottom', 'border-left', 'border-right'],
-    editor: $('<input id="edit_datable_1_input">'),
-    idInput: 'edit_datable_1_input'
+    editor: $('<input id="edit_task_datable_input">'),
+    idInput: 'edit_task_datable_input'
 }
-// init data base according mindmup-editable.js
-$('#edit_datable_1').editableTableWidget(options);
+// init data base according mindmup-edittable.js
+$('#edit_task_datable').editableTableWidget(options);
 
 // $(document).ready(function(){
 // 	$('#edit_datable_2').DataTable();

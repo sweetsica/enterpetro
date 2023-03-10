@@ -20,9 +20,13 @@
                 </a>
                 <!-- Sub Menu -->
                 <ul class="nav sub-menu">
-                    <li><a href="{{route('priceDaily')}}">Nạp giá</a></li>
-                    <li><a href="{{route('dashboard-ad')}}">Tổng đơn</a></li>
+                    @if(session('role') == 'admin')
+                        <li><a href="{{route('priceDaily')}}">Nạp giá</a></li>
+                        <li><a href="{{route('dashboard-ad')}}">Tổng đơn</a></li>
+                        <li><a href="{{route('dashboard-ac')}}">Danh sách đơn</a></li>
+                    @elseif(session('role') == 'accounting')
                     <li><a href="{{route('dashboard-ac')}}">Danh sách đơn</a></li>
+                    @endif
                     <li><a href="{{route('dashboard-sa')}}">Đơn hàng</a></li>
 {{--                    <li><a href="{{route('billDetails')}}">Chi tiết đơn hàng</a></li>--}}
 {{--                    <li><a href="{{route('addPriceDaily')}}">Biến động giá</a></li>--}}
