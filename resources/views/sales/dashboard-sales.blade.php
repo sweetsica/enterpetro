@@ -77,7 +77,7 @@
                                 </tbody>
                             </table>
                             <!-- End Invoice List Table -->
-                            <div id="originPriceModal" class="modal fade">
+                            <div id="originPriceModal" class="modal fade" style="display: block">
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content" style=" position: relative; z-index: 1;">
                                         <!-- Modal Body -->
