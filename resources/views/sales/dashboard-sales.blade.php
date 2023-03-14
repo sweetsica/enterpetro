@@ -61,7 +61,7 @@
                             <!-- End Invoice List Table -->
                             <div id="originPriceModal" class="modal fade">
                                 <div class="modal-dialog modal-dialog-centered">
-                                    <div class="modal-content">
+                                    <div class="modal-content" style=" position: relative; z-index: 1;">
                                         <!-- Modal Body -->
                                         <div class="modal-body">
                                             <form action="{{ route('addBill') }}" method="POST">

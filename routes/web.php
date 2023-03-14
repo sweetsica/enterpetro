@@ -26,7 +26,8 @@ Route::post('/loginCheck', [TotalController::class,'checklogin'])->name('loginCh
 Route::get('/logout', [TotalController::class,'logout'])->name('logout');
 
 //Trang chủ kế toán tổng
-Route::get('/dashboard-ad', [TotalController::class,'index_ad'])->name('dashboard-ad');
+Route::get('/dashboard-ad', [TotalController::class,'index_ad'])->name('
+');
 
 //Trang chủ admin
 Route::get('/dashboard-ac', [TotalController::class,'index_ac'])->name('dashboard-ac');
@@ -54,3 +55,5 @@ Route::get('/editor', function (){
 });
 
 Route::get('/demo/editor',[BillController::class,'show']);
+
+
