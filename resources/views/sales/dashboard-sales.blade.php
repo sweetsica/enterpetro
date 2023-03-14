@@ -3,6 +3,24 @@
 @section('header')
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <style>
+        .modal-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+        }
+
+        .modal-content {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
 @endsection
 @section('content')
     {{--    @dump($priceOrigin)--}}
@@ -152,36 +170,6 @@
     <!-- End Main Content -->
 @endsection
 @section('footer-script')
-    <script>
-        // Lấy đối tượng modal và các phần tử liên quan
-        const modal = document.getElementById('originPriceModal');
-        const modalContent = document.querySelector('.modal-content');
-        const otherElements = document.querySelectorAll(':not(.modal)');
-
-        // Thiết lập z-index mặc định cho modal và phần tử liên quan
-        modal.style.zIndex = 9999;
-        modalContent.style.zIndex = 1;
-        otherElements.forEach(element => {
-            element.style.zIndex = 0;
-        });
-
-        // Bắt sự kiện khi modal được mở
-        modal.addEventListener('show.bs.modal', function () {
-            // Tìm phần tử có z-index cao nhất trên trang
-            let highestZIndex = 0;
-            otherElements.forEach(element => {
-                let zIndex = parseInt(window.getComputedStyle(element).zIndex);
-                if (zIndex > highestZIndex) {
-                    highestZIndex = zIndex;
-                }
-            });
-
-            // Đặt z-index của modal cao hơn phần tử cao nhất
-            modal.style.zIndex = highestZIndex + 1;
-            modalContent.style.zIndex = highestZIndex + 2;
-        });
-
-    </script>
     <!-- jQuery -->
     <script src="{{asset('edittable/jquery.min.js')}}"></script>
 
