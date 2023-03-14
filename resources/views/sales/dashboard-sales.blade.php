@@ -63,7 +63,7 @@
                                 <div class="modal-dialog modal-dialog-centered">
                                     <div class="modal-content" style=" position: relative; z-index: 1;">
                                         <!-- Modal Body -->
-                                        <div class="modal-body">
+                                        <div class="modal-body" style="position: relative; z-index: 1">
                                             <form action="{{ route('addBill') }}" method="POST">
                                                 @csrf
                                                 @method('POST')
