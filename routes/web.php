@@ -26,8 +26,7 @@ Route::post('/loginCheck', [TotalController::class,'checklogin'])->name('loginCh
 Route::get('/logout', [TotalController::class,'logout'])->name('logout');
 
 //Trang chủ kế toán tổng
-Route::get('/dashboard-ad', [TotalController::class,'index_ad'])->name('
-');
+Route::get('/dashboard-ad', [TotalController::class,'index_ad'])->name('dashboard-ad');
 
 //Trang chủ admin
 Route::get('/dashboard-ac', [TotalController::class,'index_ac'])->name('dashboard-ac');
