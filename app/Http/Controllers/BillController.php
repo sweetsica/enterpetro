@@ -39,7 +39,7 @@ class BillController extends Controller
      */
     public function store(Request $request)
     {
-//      dd($request);
+//        dd($request);
         $userId = Auth::user()->id;
         $inStoreDate = Carbon::now();
         $unit = 'kg';

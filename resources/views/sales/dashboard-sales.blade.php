@@ -18,13 +18,10 @@
                             <div class="card-body pt-30 justify-content-between d-flex">
                                 <h4 class="font-20 ">Đơn hàng - (Giá hôm
                                     nay: {{ number_format($priceOrigin['minSaleOrigin'], 0 , ',' , '.' ) }}đ)</h4>
-{{--                                <button type="submit" class="btn long mr-20" data-toggle="modal"--}}
-{{--                                        data-target="#originPriceModal">Thêm đơn--}}
-{{--                                </button>--}}
                                 <div class="add-event-btn">
                                     <a href="#" class="btn w-100" data-toggle="modal" data-target="#createEventModal">
                                         <img src="../../assets/img/svg/plus_white.svg" alt="" class="svg mr-1">
-                                        Add New Event
+                                        Lên đơn
                                     </a>
                                 </div>
                             </div>
@@ -75,174 +72,73 @@
     </div>
     </div>
 
-{{--        <div id="originPriceModal" class="modal fade">--}}
-{{--        <div class="modal-dialog modal-dialog-centered">--}}
-{{--            <div class="modal-content">--}}
-{{--                <!-- Modal Body -->--}}
-{{--                <div class="modal-body">--}}
-{{--                    <form action="{{ route('addBill') }}" method="POST">--}}
-{{--                        @csrf--}}
-{{--                        @method('POST')--}}
-{{--                        <div class="contact-account-setting media-body">--}}
-{{--                            <h4 class="mb-4">Đơn hàng</h4>--}}
-{{--                            <div class="mb-4">--}}
-{{--                                <label class="bold black mb-2" for="nameCustomer">Tên khách</label>--}}
-{{--                                <input type="text" id="nameCustomer" class="theme-input-style"--}}
-{{--                                       placeholder="Họ tên" name="nameCustomer" required>--}}
-{{--                            </div>--}}
-
-{{--                            <div class="mb-4">--}}
-{{--                                <label class="bold black mb-2" for="massShell">Loại bình</label>--}}
-{{--                                <select class="theme-input-style" id="shellType" required name="shellType">--}}
-{{--                                    <option selected disabled>-Chọn-</option>--}}
-{{--                                    @foreach($shellTypes as $shellType)--}}
-{{--                                        <option class="theme-input-style"--}}
-{{--                                                value="{{$shellType['id']}}">{{$shellType['name']}}--}}
-{{--                                            - {{$shellType['massShell']}}{{$shellType['unitShell']}}</option>--}}
-{{--                                    @endforeach--}}
-{{--                                </select>--}}
-
-{{--                            </div>--}}
-
-{{--                            <div class="mb-4">--}}
-{{--                                <label class="bold black mb-2" for="ammount">Số lượng</label>--}}
-{{--                                <input type="number" id="ammount" class="theme-input-style"--}}
-{{--                                       placeholder="Bình" name="ammount" required>--}}
-{{--                            </div>--}}
-
-{{--                            <div class="mb-4 col-xs-6">--}}
-{{--                                <label class="bold black mb-2" for="storageId">Chọn từ kho</label>--}}
-{{--                                <select class="theme-input-style" id="storageId" required name="storageId">--}}
-{{--                                    <option selected disabled>-Chọn-</option>--}}
-{{--                                    @foreach($storages as $storage)--}}
-{{--                                        <option class="theme-input-style" placeholder="Chọn"--}}
-{{--                                                value="{{$storage['id']}}">{{$storage['name']}}</option>--}}
-{{--                                    @endforeach--}}
-{{--                                </select>--}}
-{{--                            </div>--}}
-
-{{--                            <div class="mb-4">--}}
-{{--                                --}}{{--                                                        @dd($minSaleOrigin)--}}
-{{--                                @if(!is_null($priceOrigin))--}}
-{{--                                    <label class="bold black mb-2" for="salePrice">Giá bán (Giá hôm--}}
-{{--                                        nay: {{ number_format($priceOrigin['minSaleOrigin'], 0 , ',' , '.' ) }}--}}
-{{--                                        đ)</label>--}}
-{{--                                @endif--}}
-{{--                                <input type="number" id="salePrice" class="theme-input-style"--}}
-{{--                                       placeholder="VND" name="salePrice" required>--}}
-{{--                            </div>--}}
-
-{{--                            <div class="mb-4">--}}
-{{--                                <label class="bold black mb-2" for="address">Địa chỉ giao</label>--}}
-{{--                                <input type="text" id="address" class="theme-input-style"--}}
-{{--                                       placeholder="Địa chỉ nhận" name="address" required>--}}
-{{--                            </div>--}}
-
-{{--                            <div class="mb-4">--}}
-{{--                                <label class="bold black mb-2" for="address">Tiền nợ</label>--}}
-{{--                                <input type="text" id="address" class="theme-input-style"--}}
-{{--                                       placeholder="đ" name="debt" required>--}}
-{{--                            </div>--}}
-
-{{--                            <div class="mb-4">--}}
-{{--                                <label class="bold black mb-2" for="address">Ghi chú</label>--}}
-{{--                                <input type="text" id="address" class="theme-input-style"--}}
-{{--                                       placeholder="..." name="note" required>--}}
-{{--                            </div>--}}
-
-{{--                            <input hidden name="idSale" value="@if(session('userId')){{ session('userId')}}@endif">--}}
-
-{{--                            <div class="">--}}
-{{--                                <button class="btn mr-4">Lên đơn</button>--}}
-{{--                                <a href="#" class="cancel font-14 bold"--}}
-{{--                                   data-dismiss="modal">Cancel</a>--}}
-{{--                            </div>--}}
-{{--                        </div>--}}
-{{--                    </form>--}}
-{{--                </div>--}}
-{{--                <!-- End Modal Body -->--}}
-{{--            </div>--}}
-{{--        </div>--}}
-
     <div id="createEventModal" class="modal fade">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <!-- Modal Header -->
-                        <div class="modal-header pb-0 border-bottom-0 flex-column">
-                            <div class="custom-select-box d-inline-flex align-items-center m_style">
-                                <label for="formGroupExampleInput6"><img src="../../assets/img/svg/color.svg" alt="" class="svg"></label>
-                                <select id="formGroupExampleInput6">
-                                    <option value="travel">Travel</option>
-                                    <option value="calendar">Calendar</option>
-                                    <option value="birthday">Birthday</option>
-                                    <option value="holyday">Holyday</option>
-                                    <option value="discovered">Discovered</option>
-                                    <option value="meetup">Meetup</option>
-                                    <option value="anniversary">Anniversary</option>
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <!-- Modal Body -->
+                <div id="modalBody2" class="modal-body border-bottom-0 pt-0 pb-0">
+                    @if(!is_null($priceOrigin))
+                        <h4 class="font-20 mb-30 pt-20" for="salePrice">Giá bán (Giá hôm
+                            nay: {{ number_format($priceOrigin['minSaleOrigin'], 0 , ',' , '.' ) }}
+                            đ)</h4>
+                    @endif
+                    <form action="{{ route('addBill') }}" method="POST">
+                        @csrf
+                        <div class="calendar-modal-dates mt-10 d-flex">
+                            <div class="calendar-modal-start-date m_style mr-2">
+                                <label for="nameCustomer"><i class="icofont-beard"></i></label>
+                                <input type="text" id="nameCustomer" placeholder="Họ tên" name="nameCustomer" required>
+                            </div>
+                            <div class="calendar-modal-start-date m_style mr-2">
+                                <label for="address"><i class="icofont-address-book"></i></label>
+                                <input type="text" id="address" placeholder="Địa chỉ" name="address" required>
+                            </div>
+                        </div>
+
+                        <div class="calendar-modal-dates mt-10 d-flex">
+                            <div class="calendar-modal-start-date m_style mr-2" style="width: 100%">
+                                <label for="shellType"><i class="icofont-bullet"></i></label>
+                                <select style="width: 100%" id="shellType" class="m-state" name="shellType">
+                                    @foreach($shellTypes as $shellType)--}}
+                                        <option  value="{{$shellType['id']}}">{{$shellType['name']}} - {{$shellType['massShell']}}{{$shellType['unitShell']}}</option>
+                                    @endforeach
                                 </select>
                             </div>
-
-                            <div class="calendar-modal-title-wrap w-100 d-flex mt-10">
-                                <div class="calendar-modal-title m_style flex-grow">
-                                    <label for="formGroupExampleInput"><i class="icofont-tag"></i></label>
-                                    <input type="text" id="formGroupExampleInput" placeholder="Ewe fuc dudbared.">
-                                </div>
-
-                                <div class="calendar-modal-private m_style">
-                                    <i class="icofont-unlock"></i>
-                                </div>
+                            <div class="calendar-modal-end-date m_style mr-2" >
+                                <label for="ammount"><i class="icofont-box"></i></label>
+                                <input type="number" id="ammount" placeholder="Số lượng bình" name="ammount" required>
                             </div>
-
-                            <button type="button" class="close" data-dismiss="modal">
-                                <span aria-hidden="true">×</span>
-                                <span class="sr-only">close</span>
-                            </button>
+                            <div class="calendar-modal-start-date m_style mr-2">
+                                <label for="storageId"><i class="icofont-building"></i></label>
+                                <select id="storageId" class="m-state">
+                                    @foreach($storages as $storage)
+                                        <option placeholder="Chọn" value="{{$storage['id']}}">{{$storage['name']}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
                         </div>
-                        <!-- End Modal Header -->
-
-                        <!-- Modal Body -->
-                        <div id="modalBody2" class="modal-body border-bottom-0 pt-0 pb-0">
-                            <form>
-                                <div class="calendar-modal-location m_style mt-10">
-                                    <label for="formGroupExampleInput1"><i class="icofont-location-pin"></i></label>
-                                    <input type="text" id="formGroupExampleInput1" placeholder="502 Ozisa Heights">
-                                </div>
-
-
-                                <div class="calendar-modal-dates mt-10 d-flex">
-                                    <div class="calendar-modal-start-date m_style mr-2">
-                                        <label for="formGroupExampleInput2"><i class="icofont-calendar"></i></label>
-                                        <input type="text" id="formGroupExampleInput2" placeholder="2020-01-13">
-                                    </div>
-
-                                    <div class="calendar-modal-end-date m_style mr-2">
-                                        <label for="formGroupExampleInput3"><i class="icofont-calendar"></i></label>
-                                        <input type="text" id="formGroupExampleInput3" placeholder="2020-01-13">
-                                    </div>
-
-                                    <div class="calendar-modal-checkbox d-flex align-items-center">
-                                        <input type="checkbox" id="formGroupExampleInput4">
-                                        <label for="formGroupExampleInput4">All Day</label>
-                                    </div>
-                                </div>
-
-                                <div class="calendar-modal-state d-inline-flex align-items-center mt-10 m_style">
-                                    <label for="formGroupExampleInput5"><i class="icofont-bag-alt"></i></label>
-                                    <select id="formGroupExampleInput5" class="m-state">
-                                        <option value="busy">Busy</option>
-                                        <option value="free">Free</option>
-                                    </select>
-                                </div>
-                            </form>
+                        <div class="calendar-modal-dates mt-10 d-flex">
+                            <div class="calendar-modal-end-date m_style mr-2">
+                                <label for="salePrice"><i class="icofont-bill"></i></label>
+                                <input type="number" id="salePrice" placeholder="Giá bán" name="salePrice" required>
+                            </div>
+                            <div class="calendar-modal-end-date m_style mr-2">
+                                <label for="note"><i class="icofont-binary"></i></label>
+                                <input type="text" id="note" placeholder="Note đơn" name="note" required>
+                            </div>
                         </div>
-                        <!-- End Modal Body -->
-
                         <div class="modal-footer border-top-0 pt-10">
-                            <button class="btn">Save</button>
+                            <button type="submit" class="btn">Tạo đơn</button>
                         </div>
-                    </div>
+                    </form>
+
                 </div>
+                <!-- End Modal Body -->
+
+
             </div>
+        </div>
+    </div>
         <!-- End Main Content -->
     @endsection
     @section('footer-script')
