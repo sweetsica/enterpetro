@@ -28,7 +28,5 @@ class PriceSeeder extends Seeder
             'status' => '1',
             'created_at' => Carbon::now()
         ]);
-
-
     }
 }

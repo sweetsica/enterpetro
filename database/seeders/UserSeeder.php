@@ -60,6 +60,6 @@ class UserSeeder extends Seeder
             'address' => 'Phố Trung Kính',
             'contact' => 'Paper - 0913445824',
             'status' => '1'
-        ]);g
+        ]);
     }
 }
