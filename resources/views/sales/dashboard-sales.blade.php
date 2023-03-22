@@ -78,7 +78,9 @@
                 <!-- Modal Body -->
                 <div id="modalBody2" class="modal-body border-bottom-0 pt-0 pb-0">
                     @if(!is_null($priceOrigin))
-                        <h4 class="font-20 mb-30 pt-20" for="salePrice">Giá bán (Giá hôm
+                        <h4 class="font-20 mb-30 pt-20
+
+" for="salePrice">Giá bán (Giá hôm
                             nay: {{ number_format($priceOrigin['minSaleOrigin'], 0 , ',' , '.' ) }}
                             đ)</h4>
                     @endif
