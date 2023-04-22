@@ -29,12 +29,16 @@
                     @if(session('role') == 'admin')
                         <li><a href="{{route('priceDaily')}}">Nạp giá</a></li>
                         <li><a href="{{route('dashboard-ad')}}">Tổng đơn</a></li>
+                        <li><a href="{{route('dashboard-ac')}}">Danh sách khách hàng</a></li>
                         <li><a href="{{route('dashboard-ac')}}">Danh sách đơn</a></li>
                         <li><a href="{{route('storage.index')}}">Quản lý kho</a></li>
+
                     @elseif(session('role') == 'accounting')
+                        <li><a href="{{route('dashboard-ac')}}">Danh sách khách hàng</a></li>
                         <li><a href="{{route('dashboard-ac')}}">Danh sách đơn</a></li>
                         <li><a href="{{route('storage.index')}}">Quản lý kho</a></li>
                     @endif
+                        <li><a href="{{route('dashboard-ac')}}">Danh sách khách hàng</a></li>
                         <li><a href="{{route('dashboard-sa')}}">Đơn hàng</a></li>
                 </ul>
                 <!-- End Sub Menu -->

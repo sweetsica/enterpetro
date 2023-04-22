@@ -201,7 +201,7 @@
     <script src="{{asset('edittable/jquery.slimscroll.js')}}"></script>
     <script src="{{asset('assets/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <script src="{{asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
-    <script src="{{asset('assets/js/script.js')}}"></script>
+{{--    <script src="{{asset('assets/js/script.js')}}"></script>--}}
 
     <script>
         const selector = $('#edit_task_datable :input');
