@@ -13,10 +13,16 @@
         <!-- Nav -->
         <ul class="nav">
             <li class="nav-category">Enter Petro</li>
-            <li class="active">
+            <li>
+                <a href="{{route('dashboard-economy')}}">
+                    <i class="icofont-pie-chart"></i>
+                    <span>Bảng thống kê</span>
+                </a>
+            </li>
+            <li class="has-sub-item">
                 <a href="#">
-                    <i class="icofont-table"></i>
-                    <span class="link-title">Thống kê đơn hàng</span>
+                    <i class="icofont-listing-box"></i>
+                    <span class="link-title" >Thống kê đơn hàng</span>
                 </a>
                 <!-- Sub Menu -->
                 <ul class="nav sub-menu">
@@ -24,12 +30,12 @@
                         <li><a href="{{route('priceDaily')}}">Nạp giá</a></li>
                         <li><a href="{{route('dashboard-ad')}}">Tổng đơn</a></li>
                         <li><a href="{{route('dashboard-ac')}}">Danh sách đơn</a></li>
+                        <li><a href="{{route('storage.index')}}">Quản lý kho</a></li>
                     @elseif(session('role') == 'accounting')
-                    <li><a href="{{route('dashboard-ac')}}">Danh sách đơn</a></li>
+                        <li><a href="{{route('dashboard-ac')}}">Danh sách đơn</a></li>
+                        <li><a href="{{route('storage.index')}}">Quản lý kho</a></li>
                     @endif
-                    <li><a href="{{route('dashboard-sa')}}">Đơn hàng</a></li>
-{{--                    <li><a href="{{route('billDetails')}}">Chi tiết đơn hàng</a></li>--}}
-{{--                    <li><a href="{{route('addPriceDaily')}}">Biến động giá</a></li>--}}
+                        <li><a href="{{route('dashboard-sa')}}">Đơn hàng</a></li>
                 </ul>
                 <!-- End Sub Menu -->
             </li>

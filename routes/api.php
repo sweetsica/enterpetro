@@ -22,5 +22,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/bill',[\App\Http\Controllers\Api\BillController::class, 'index']);
 
-//Update đơn
-Route::post('/bill/update', [\App\Http\Controllers\BillController::class, 'update'])->name('updateBill');
+Route::post('/storage',[\App\Http\Controllers\Api\StorageController::class, 'update'])->name('api-storage-update');
+
+Route::post('/bill',[\App\Http\Controllers\Api\BillController::class, 'update'])->name('api-bill-update');
+

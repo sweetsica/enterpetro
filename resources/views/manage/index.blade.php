@@ -44,7 +44,7 @@
                                         </div>
                                         <div class="">
                                             <p class="mb-1 font-14 l-height1">Khối lượng bán tuần</p>
-                                            <h4>{{number_format( $totalMass , 000 , ',' , '.' )}} kg</h4>
+                                            <h4>{{number_format( $key_week ['totalMass'] , 000 , ',' , '.' )}} kg</h4>
                                         </div>
                                     </div>
 
@@ -66,7 +66,7 @@
                                         </div>
                                         <div class="">
                                             <p class="mb-1 font-14 l-height1">Tổng doanh thu</p>
-                                            <h4>{{number_format( $totalBill , 0 , ',' , '.' )}}đ</h4>
+                                            <h4>{{number_format( $key_week ['totalBill'] , 0 , ',' , '.' )}} đ</h4>
                                         </div>
                                     </div>
 
@@ -88,7 +88,7 @@
                                         </div>
                                         <div class="">
                                             <p class="mb-1 font-14 l-height1">Tổng tiền nhập hàng</p>
-                                            <h4>{{number_format( $totalBuy , 0 , ',' , '.' )}}đ</h4>
+                                            <h4>{{number_format( $key_week ['totalBuy'] , 0 , ',' , '.' )}} đ</h4>
                                         </div>
                                     </div>
 
@@ -110,7 +110,7 @@
                                         </div>
                                         <div class="">
                                             <p class="mb-1 font-14 l-height1">Tổng lãi</p>
-                                            <h4>{{number_format( $totalInterest , 0 , ',' , '.' )}}đ</h4>
+                                            <h4>{{number_format( $key_week ['totalInterest'] , 0 , ',' , '.' )}} đ</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@
                                             <th>Ghi chú</th>
                                         </tr>
                                     </thead>
-                                    <div class="statistic-row bg-transparent days">today</div>
+{{--                                    <div class="statistic-row bg-transparent days">today</div>--}}
                                     <tbody>
                                         @foreach ($dataBills as $dataBill)
                                             <tr>

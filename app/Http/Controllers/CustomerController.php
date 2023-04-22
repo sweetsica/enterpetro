@@ -1,20 +1,19 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Models\Bill;
+use App\Models\Customer;
 use Illuminate\Http\Request;
-use function MongoDB\BSON\toJSON;
 
-class BillController extends Controller
+class CustomerController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return response()->json(Bill::all());
+        $data = Customer::take(50)->orderBy('id','asc')->get();
+        return view('functions.customer.index',compact('data'));
     }
 
     /**
@@ -30,9 +29,15 @@ class BillController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        Customer::create($data);
+        return view('functions.customer.index');
     }
 
+    public function search(Request $request)
+    {
+
+    }
     /**
      * Display the specified resource.
      */
@@ -52,15 +57,9 @@ class BillController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request)
+    public function update(Request $request, string $id)
     {
-        $id = $request->id;
-        $storage = Bill::where('id', $id)->first();
-        if (!$storage) {
-            return response()->json('Error');
-        }
-        $storage->update($request->all());
-        return response()->json('Success');
+        //
     }
 
     /**

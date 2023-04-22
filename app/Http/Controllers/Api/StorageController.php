@@ -1,23 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Api;
 
+use App\Http\Controllers\Controller;
+use App\Models\Bill;
 use App\Models\Storage;
-use App\Traits\DataCommonTrait;
 use Illuminate\Http\Request;
+use function MongoDB\BSON\toJSON;
 
 class StorageController extends Controller
 {
-    use DataCommonTrait;
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $datas = Storage::all();
-        $totalMass = $this->getTotalMass();
-        $totalShell = $this->getTotalShell();
-        return view('functions.storage.index',compact('datas','totalMass','totalShell'));
+        return response()->json(Bill::all());
     }
 
     /**
@@ -39,16 +37,15 @@ class StorageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Storage $id)
+    public function show(string $id)
     {
-        $data = Storage::find($id)->last();
-        return $data;
+        //
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Storage $storage)
+    public function edit(string $id)
     {
         //
     }
@@ -56,20 +53,21 @@ class StorageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
+        $id = $request->id;
         $storage = Storage::where('id', $id)->first();
         if (!$storage) {
-            return redirect()->back()->withErrors('Code bill not found', 'notFoundBill');
+            return response()->json('Error');
         }
         $storage->update($request->all());
-        return redirect()->back();
+        return response()->json('Success');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Storage $storage)
+    public function destroy(string $id)
     {
         //
     }

@@ -1,0 +1,12 @@
+.m-auto-mw-80{
+    margin: 0px auto!important;
+    max-width: 98%!important;
+}
+
+.sidebar .sidebar-body li i{
+    position: unset;
+}
+
+.label-nm{
+    margin: 0px;
+}

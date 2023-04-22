@@ -10,6 +10,7 @@ use App\Traits\CheckLatestPriceOrigin;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class BillController extends Controller
 {
@@ -40,27 +41,35 @@ class BillController extends Controller
     public function store(Request $request)
     {
 //        dd($request);
+        $priceOrigin = PriceOrigin::get('minSaleOrigin')->last();
+        $salePrice = $request->salePrice;
+        if ($priceOrigin->minSaleOrigin < $salePrice) {
+            $priceSale = $salePrice;
+        }else{
+            return redirect()->back()->with('fail', 'Lỗi, giá bán phải cao hơn giá nhập!');
+        }
+
         $userId = Auth::user()->id;
+
+        $codeBill = time();
         $inStoreDate = Carbon::now();
         $unit = 'kg';
         $shellinfo = ShellType::find($request->shellType);
         $massShell = $shellinfo['massShell'];
         $ammount = $request->ammount;
         $massTotal = $massShell * $ammount;
-        $salePrice = $request->salePrice;
-        $priceOrigin = PriceOrigin::get('minSaleOrigin')->last();
         $minSaleAllow = $priceOrigin->minSaleOrigin;
-        if ($priceOrigin->minSaleOrigin < $salePrice) {
-            $priceSale = $salePrice;
-        }else{
-            echo 'Lỗi, giá bán phải cao hơn giá nhập!';
-            return redirect()->back();
-        }
+        $salePrice = str_replace(',', '', $salePrice );
         $buyTotal= $massTotal*$minSaleAllow;
         $bill =$massTotal*$priceSale;
+        $shellDebt = $request->shellDebt;
+        $debt = $request->debt;
+
+
         $databill=Bill::create([
+            'codeBill' => $codeBill,
             'inStoreDate' => $inStoreDate,
-            'unit' => $unit,
+            '$bill' => $unit,
             'massTotal' => $massTotal,
             'priceSale' => $priceSale,
             'nameCustomer' => $request->nameCustomer,
@@ -71,12 +80,15 @@ class BillController extends Controller
             'buyPrice' => $minSaleAllow,
             'buyTotal' => $buyTotal,
             'bill' => $bill,
+            'shellDebt' => $shellDebt,
+            'debt' => $debt,
             'idSale' => $userId,
             'interest' => $bill - $buyTotal,
             'income' => $bill-$buyTotal,
             'address' => $request->address,
         ]);
         $databill->save();
+//        dd($databill);
         return redirect()->back();
     }
 
@@ -106,13 +118,28 @@ class BillController extends Controller
      */
     public function update(Request $request)
     {
-
-        $bill = Bill::find($request->id);
+//        dd(\session()->all());
+        $code = $request->codeBill;
+        $bill = Bill::where('codeBill', $code)->first();
         if (!$bill) {
-            return response()->json('failed');
+            return redirect()->back()->withErrors('Code bill not found', 'notFoundBill');
         }
 
-        return response()->json($bill->update($request->all()));
+        if (Session::get('role') == 'admin' || Session::get('role') == 'accountant') {
+            $bill->update($request->all());
+        } else {
+            $data = [];
+            if ($request->moneyDebt) {
+                $data['debt'] = $bill->debt - $request->moneyDebt;
+            }
+
+            if ($request->shellDebt) {
+                $data['shellDebt'] = $bill->shellDebt - $request->shellDebt;
+            }
+            $bill->update($data);
+        }
+
+        return redirect()->back();
     }
 
     /**

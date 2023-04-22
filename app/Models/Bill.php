@@ -15,4 +15,14 @@ class Bill extends Model
     {
         return $this->belongsTo(ShellType::class, 'shellType');
     }
+
+    public function customer()
+    {
+        return $this->belongsToMany(Customer::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class,'idSale','id');
+    }
 }

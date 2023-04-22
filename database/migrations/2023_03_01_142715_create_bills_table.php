@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('bills', function (Blueprint $table) {
             $table->id();
+            $table->string('codeBill')->nullable();
             $table->dateTime('inStoreDate')->nullable();//Ngày nhập
             $table->string('nameCustomer')->nullable();//Tên khách
             $table->string('address')->nullable();//Địa chỉ
@@ -25,8 +26,8 @@ return new class extends Migration
             $table->integer('salePrice')->nullable();//Đơn giá bán
             $table->integer('income')->nullable();//Doanh thu
             $table->integer('bill')->nullable();//Thanh toán
-            $table->integer('debt')->nullable();//Tiền nợ
-            $table->integer('shellDebt')->nullable();//Nợ vỏ
+            $table->integer('debt')->signed()->nullable();//Tiền nợ
+            $table->integer('shellDebt')->signed()->nullable();//Nợ vỏ
             $table->integer('shellDebtAmmount')->nullable();//Số vỏ nợ
             $table->integer('buyPrice')->nullable();//Giá nhập hàng
             $table->integer('buyTotal')->nullable();//Tổng phí nhập hàng

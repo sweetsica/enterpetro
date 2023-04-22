@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,9 +12,11 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+            StorageSeeder::class,/*kho và thông số*/
             ShellSeeder::class,/*loại bình*/
             PriceSeeder::class,/*data chung*/
             UserSeeder::class,/*người dùng*/
+            CustomerSeeder::class,/*Khách hàng*/
         ]);
     }
 }

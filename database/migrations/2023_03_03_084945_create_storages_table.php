@@ -16,6 +16,13 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('totalShell')->nullable();
             $table->string('totalShellMass')->nullable();
+            $table->integer('bt20')->default(0);
+            $table->integer('bt25')->default(0);
+            $table->integer('bt27')->default(0);
+            $table->integer('bt28')->default(0);
+            $table->integer('bn2')->default(0);
+            $table->integer('bn3')->default(0);
+            $table->integer('bn4')->default(0);
             $table->string('address')->nullable();
             $table->string('contact')->nullable();
             $table->string('note')->nullable();

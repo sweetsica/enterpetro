@@ -5,6 +5,14 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
           integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
+    <script>
+        function formatNumber(inputId) {
+            const inputElement = document.getElementById(inputId);
+            const rawValue = inputElement.value.replaceAll(",", "");
+            const formattedValue = new Intl.NumberFormat().format(rawValue);
+            inputElement.value = formattedValue;
+        }
+    </script>
 @endsection
 @section('content')
     {{--    @dump($priceOrigin)--}}
@@ -23,7 +31,7 @@
                         </div>
                         <div class="table-responsive">
                             <!-- Invoice List Table -->
-                            <table class="text-nowrap dh-table">
+                            <table class="text-nowrap dh-table m-auto-mw-80">
                                 <thead class="text_color-bg text-white">
                                 <tr>
                                     <th>ID Đơn</th>
@@ -47,7 +55,8 @@
                         {{$priceOrigins->links( "pagination::bootstrap-4")}}
                         <!-- End Invoice List Table -->
                         </div>
-                        <div id="originPriceModal" class="modal fade">
+
+                        <div id="originPriceModal" class="modal">
                             <div class="modal-dialog modal-dialog-centered">
                                 <div class="modal-content">
                                     <!-- Modal Body -->
@@ -59,28 +68,13 @@
                                                 <h4 class="mb-4">Thêm mới</h4>
                                                 <div class="mb-4">
                                                     <label class="bold black mb-2" for="priceOrigin">Giá nhập</label>
-                                                    <input type="number" id="priceOrigin" class="theme-input-style"
-                                                           placeholder="Giá nhập" name="priceOrigin" required>
+                                                    <input type="text" id="price1" oninput="formatNumber('price1')" class="theme-input-style" placeholder="Giá nhập" name="priceOrigin" required>
                                                 </div>
 
                                                 <div class="mb-4">
                                                     <label class="bold black mb-2" for="minSaleOrigin">Giá bán</label>
-                                                    <input type="number" id="minSaleOrigin" class="theme-input-style"
-                                                           placeholder="Giá bán" name="minSaleOrigin" required>
+                                                    <input type="text" id="price2" oninput="formatNumber('price2')" class="theme-input-style" placeholder="Giá bán" name="minSaleOrigin" required>
                                                 </div>
-{{--                                                <div class="mb-30">--}}
-{{--                                                    <label class="bold black mb-2">Ngày nhập</label>--}}
-{{--                                                    <div class="date datepicker dashboard-date style--two"--}}
-{{--                                                         id="datePickerExample">--}}
-{{--                                                            <span class="input-group-addon mr-0"><img--}}
-{{--                                                                    src="{{asset('assets/img/svg/calender.svg')}}"--}}
-{{--                                                                    alt=""--}}
-{{--                                                                    class="svg"></span>--}}
-{{--                                                        <input id="datePicker" type="text" class="pl-2"--}}
-{{--                                                               required readonly name="createdDate">--}}
-{{--                                                    </div>--}}
-{{--                                                </div>--}}
-
                                                 <div class="">
                                                     <button class="btn mr-4">Báo giá</button>
                                                     <a href="#" class="cancel font-14 bold"
@@ -101,23 +95,24 @@
     <!-- End Main Content -->
 @endsection
 @section('footer-script')
-    <!-- jQuery -->
-    {{--    <script src="{{asset('edittable/jquery.min.js')}}"></script>--}}
-
-    {{--    <script src="{{asset('edittable/jquery.slimscroll.js')}}"></script>--}}
-    {{--    <script src="{{asset('edittable/edit-task-table-data.js')}}"></script>--}}
-
     <!-- ======= BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
-    <script src="{{asset('assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
-    <script src="{{asset('assets/plugins/bootstrap-datepicker/custom-datepicker.js')}}"></script>
+    <script src="{{asset('assets/plugins/jquery-repeater/repeater.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/jquery-repeater/custom-repeater.js')}}"></script>
+    <!-- ======= End BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
+    <!-- ======= BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
+    <script src="{{asset('assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/moment/moment.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/datepicker/datepicker.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/timepicker/jquery.timepicker.min.js')}}"></script>
     <!-- ======= End BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
 
     <script>
-        $('#datePickerExample').datepicker({
-            format: "dd MM yyyy",
-            todayHighlight: true,
-            autoclose: true,
+        $(document).ready(function() {
+            $('#datePickerExample').datepicker({
+                format: "dd MM yyyy",
+                todayHighlight: true,
+                autoclose: true,
+            });
         });
-        console.log(123);
     </script>
 @endsection

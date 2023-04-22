@@ -49,6 +49,8 @@ class PriceDailyController extends Controller
         }
 
         $params = $request->only(['priceOrigin', 'minSaleOrigin']);
+        $params['priceOrigin'] = str_replace(',', '', $params['priceOrigin'] );
+        $params['minSaleOrigin'] = str_replace(',', '', $params['minSaleOrigin']);
         PriceOrigin::create($params);
 
 
