@@ -25,6 +25,26 @@
     @if(View::hasSection('header'))
         @yield('header')
     @endif
+    <!-- ✅ Load CSS file for Select2 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- ✅ load jQuery ✅ -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- ✅ load JS for Select2 ✅ -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"
+      integrity="sha512-2ImtlRlf2VVmiGZsjm9bEyhjGW4dU7B6TNwh/hx/iSByxNENtj3WVE6o/9Lj4TJeVXPi4bnOIMXFIJJAeufa0A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
 </head>
 <body>
 <div class="offcanvas-overlay">
@@ -150,7 +170,7 @@
 </div>
 <!-- End wrapper -->
 <!-- ======= BEGIN GLOBAL MANDATORY SCRIPTS ======= -->
-<script src="{{asset('assets/js/jquery.min.js')}}"></script>
+{{--<script src="{{asset('assets/js/jquery.min.js')}}"></script>--}}
 <script src="{{asset('assets/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 <script src="{{asset('assets/plugins/perfect-scrollbar/perfect-scrollbar.min.js')}}"></script>
 <script src="{{asset('assets/js/script.js')}}"></script>

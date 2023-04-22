@@ -12,8 +12,8 @@ class Customer extends Model
 
     protected $guarded = '';
 
-    public function bills()
+    public function bills(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
-        return $this->hasMany(BillController::class);
+        return $this->hasMany(Bill::class);
     }
 }

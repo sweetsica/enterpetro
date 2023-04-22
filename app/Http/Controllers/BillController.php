@@ -24,7 +24,7 @@ class BillController extends Controller
         $shellTypes = ShellType::all();
         $storages = Storage::all();
 //        return view('manage.index')->with('minSaleOrigin', $priceOrigin)->with(compact('dataBills'));
-        return view('sales.dashboard-sales')->with(compact('dataBills','shellTypes','storages','priceOrigin'));
+        return view('sales.dashboard-sales')->with(compact('dataBills', 'shellTypes', 'storages', 'priceOrigin'));
     }
 
     /**
@@ -42,10 +42,11 @@ class BillController extends Controller
     {
 //        dd($request);
         $priceOrigin = PriceOrigin::get('minSaleOrigin')->last();
-        $salePrice = $request->salePrice;
+        $salePrice = str_replace(',', '', $request->salePrice);
         if ($priceOrigin->minSaleOrigin < $salePrice) {
             $priceSale = $salePrice;
-        }else{
+        } else {
+        dd('something wrong');
             return redirect()->back()->with('fail', 'Lỗi, giá bán phải cao hơn giá nhập!');
         }
 
@@ -59,20 +60,20 @@ class BillController extends Controller
         $ammount = $request->ammount;
         $massTotal = $massShell * $ammount;
         $minSaleAllow = $priceOrigin->minSaleOrigin;
-        $salePrice = str_replace(',', '', $salePrice );
-        $buyTotal= $massTotal*$minSaleAllow;
-        $bill =$massTotal*$priceSale;
+        $salePrice = str_replace(',', '', $salePrice);
+        $buyTotal = $massTotal * $minSaleAllow;
+        $bill = $massTotal * $priceSale;
         $shellDebt = $request->shellDebt;
         $debt = $request->debt;
 
 
-        $databill=Bill::create([
+        $databill = Bill::create([
             'codeBill' => $codeBill,
             'inStoreDate' => $inStoreDate,
             '$bill' => $unit,
             'massTotal' => $massTotal,
             'priceSale' => $priceSale,
-            'nameCustomer' => $request->nameCustomer,
+            'customer_id' => $request->customer_id,
             'shellType' => $request->shellType,
             'ammount' => $request->ammount,
             'storageId' => $request->storageId,
@@ -84,11 +85,11 @@ class BillController extends Controller
             'debt' => $debt,
             'idSale' => $userId,
             'interest' => $bill - $buyTotal,
-            'income' => $bill-$buyTotal,
+            'income' => $bill - $buyTotal,
             'address' => $request->address,
         ]);
         $databill->save();
-//        dd($databill);
+
         return redirect()->back();
     }
 
@@ -102,7 +103,7 @@ class BillController extends Controller
         $shellTypes = ShellType::all();
         $storages = Storage::all();
 //        return view('manage.index')->with('minSaleOrigin', $priceOrigin)->with(compact('dataBills'));
-        return view('manage.billDetail')->with(compact('dataBills','shellTypes','storages','priceOrigin'));
+        return view('manage.billDetail')->with(compact('dataBills', 'shellTypes', 'storages', 'priceOrigin'));
     }
 
     /**

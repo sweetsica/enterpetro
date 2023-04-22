@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Customer;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class CustomerController extends Controller
@@ -10,10 +11,18 @@ class CustomerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $data = Customer::take(50)->orderBy('id','asc')->get();
-        return view('functions.customer.index',compact('data'));
+        $customers = Customer::take(50)->orderBy('id', 'asc');
+        if ($request->search) {
+            $customers = $customers->where('name', 'like', "%$request->search%");
+            $data['search'] = $request->search;
+        }
+
+        $data['customers'] = $customers->get();
+
+
+        return view('functions.customer.index', $data);
     }
 
     /**
@@ -30,20 +39,27 @@ class CustomerController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $data['dob'] = Carbon::now();
+//        dd($data);
         Customer::create($data);
-        return view('functions.customer.index');
+        return redirect()->route('index-cus');
     }
 
     public function search(Request $request)
     {
 
     }
+
     /**
      * Display the specified resource.
      */
     public function show(string $id)
     {
-        //
+        $customer = Customer::query()->with('bills')->find($id);
+
+        $data['customer'] = $customer;
+
+        return view('functions.customer.detail', $data);
     }
 
     /**

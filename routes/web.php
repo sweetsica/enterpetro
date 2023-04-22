@@ -36,6 +36,13 @@ Route::get('/trang-chu-admin', [TotalController::class,'index_ad'])->name('dashb
 Route::get('/dashboard-ke-toan', [TotalController::class,'index_ac'])->name('dashboard-ac');
 //Trang chủ sales
 Route::get('/dashboard-sales', [TotalController::class,'index_sa'])->name('dashboard-sa');
+//Trang chủ khách hàng
+Route::get('/dashboard-khach-hang', [CustomerController::class, 'index'])->name('index-cus');
+
+//Trang chủ khách hàng
+Route::get('/detail-khach-hang/{customerId}', [CustomerController::class, 'show'])->name('detail-cus');
+
+Route::post('/khach-hang', [CustomerController::class, 'store'])->name('store-cus');
 
 //Danh sách đơn
 Route::get('/bill', [BillController::class,'index'])->name('listBill');

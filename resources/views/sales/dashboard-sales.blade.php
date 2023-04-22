@@ -16,7 +16,8 @@
                         {{--                        @dd($priceOrigin)--}}
                         @if(!is_null($priceOrigin))
                             <div class="card-body pt-30 justify-content-between d-flex">
-                                <h4 class="font-20 ">Giá min: {{ number_format($priceOrigin['minSaleOrigin'], 0 , ',' , '.' ) }}đ</h4>
+                                <h4 class="font-20 ">Giá
+                                    min: {{ number_format($priceOrigin['minSaleOrigin'], 0 , ',' , '.' ) }}đ</h4>
                                 <div class="add-event-btn">
                                     <a href="#" class="btn w-100" data-toggle="modal" data-target="#createEventModal">
                                         <img src="../../assets/img/svg/plus_white.svg" alt="" class="svg mr-1">
@@ -44,7 +45,7 @@
                                     <th>Vỏ nợ</th>
                                     <th>Ghi chú</th>
                                     <th>Người bán</th>
-{{--                                    <th>#</th>--}}
+                                    {{--                                    <th>#</th>--}}
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -53,7 +54,7 @@
                                         <tr>
                                             <td>{{$dataBill['id']}}</td>
                                             <td>{{$dataBill['codeBill']}}</td>
-                                            <td>{{$dataBill['nameCustomer']}}</td>
+                                            <td>{{$dataBill->customer->name}}</td>
                                             <td>{{$dataBill['address']}}</td>
                                             <td>{{$dataBill['shellType']}}</td>
                                             <td>{{$dataBill['ammount']}}</td>
@@ -65,7 +66,7 @@
                                             <th>{{$dataBill['shellDebt']}} bình</th>
                                             <td>{{$dataBill['note']}}</td>
                                             <td>{{$dataBill->user->name}}</td>
-{{--                                            <td><a href="#" class="btn w-100" data-toggle="modal" data-target="#createEventModal">Cập nhật</a></td>--}}
+                                            {{--                                            <td><a href="#" class="btn w-100" data-toggle="modal" data-target="#createEventModal">Cập nhật</a></td>--}}
                                         </tr>
                                     @endforeach
                                 @endif
@@ -80,7 +81,7 @@
                     <div class="col-1" style="float: right;">
                         <div class="edit-event-btn">
                             <a href="#" class="btn w-100" data-toggle="modal" data-target="#editEventModal">
-{{--                                <img src="../../assets/img/svg/plus_white.svg" alt="" class="svg mr-1">--}}
+                                {{--                                <img src="../../assets/img/svg/plus_white.svg" alt="" class="svg mr-1">--}}
                                 Cập nhật
                             </a>
                         </div>
@@ -93,14 +94,15 @@
                             </a>
                         </div>
                     </div>
-{{--                    <div class="col-1" style="float: right;">--}}
-{{--                        <div class="edit-event-btn">--}}
-{{--                            <a href="#" class="btn w-100" data-toggle="modal" data-target="#createEventModal">--}}
-{{--                               Tìm kiếm--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
-                    <input id="search" name="search" value="{{$search ?? ''}}" onchange="fetchData()" placeholder="Nhập mã đơn - enter để lọc">
+                    {{--                    <div class="col-1" style="float: right;">--}}
+                    {{--                        <div class="edit-event-btn">--}}
+                    {{--                            <a href="#" class="btn w-100" data-toggle="modal" data-target="#createEventModal">--}}
+                    {{--                               Tìm kiếm--}}
+                    {{--                            </a>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
+                    <input id="search" name="search" value="{{$search ?? ''}}" onchange="fetchData()"
+                           placeholder="Nhập mã đơn - enter để lọc">
                     <script>
                         function fetchData() {
                             const searchInput = document.getElementById('search')
@@ -121,25 +123,20 @@
                 <!-- Modal Body -->
                 <div id="modalBody2" class="modal-body border-bottom-0 pt-0 pb-0">
                     @if(!is_null($priceOrigin))
-                        <h4 class="font-20 mb-30 pt-20" for="salePrice">Giá bán (Min: {{ number_format($priceOrigin['minSaleOrigin'], 0 , ',' , '.' ) }} VND)</h4>
+                        <h4 class="font-20 mb-30 pt-20" for="salePrice">Giá bán
+                            (Min: {{ number_format($priceOrigin['minSaleOrigin'], 0 , ',' , '.' ) }} VND)</h4>
                     @endif
                     <form action="{{ route('addBill') }}" method="POST">
                         @csrf
                         <div class="calendar-modal-dates mt-10 d-flex">
                             <div class="calendar-modal-start-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="nameCustomer"><i class="icofont-beard"></i></label>
-{{--                                <input type="text" id="nameCustomer" placeholder="Họ tên" name="nameCustomer" required>--}}
-{{--                                <select name="nameCustomer">--}}
-{{--                                    @foreach($customers as $customer)--}}
-{{--                                        <option value="{{$customer->name}}">{{$customer->name}}</option>--}}
-{{--                                    @endforeach--}}
-{{--                                </select>--}}
-                                <input list="nameCustomer" name="nameCustomer" id="nameCustomer2" placeholder="- Chọn khách từ kho -">
-                                <datalist id="nameCustomer">
+                                <select class="basic-single" name="customer_id">
+                                    <option value="" disabled selected>- Chọn khách từ kho -</option>
                                     @foreach($customers as $customer)
-                                        <option value="{{$customer->name}}"></option>
+                                        <option value="{{$customer->id}}">{{$customer->name}}</option>
                                     @endforeach
-                                </datalist>
+                                </select>
                             </div>
                             <div class="calendar-modal-start-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="address"><i class="icofont-address-book"></i></label>
@@ -147,7 +144,7 @@
                             </div>
                         </div>
                         <div class="calendar-modal-dates mt-10 d-flex">
-                        {{--Kho--}}
+                            {{--Kho--}}
                             <div class="calendar-modal-start-date m_style mr-2 label-nm">
                                 <label for="storageId"><i class="icofont-building"></i></label>
                                 <select id="storageId" class="m-state">
@@ -157,12 +154,12 @@
                                     @endforeach
                                 </select>
                             </div>
-                        {{--Số lượng bình--}}
-                            <div class="calendar-modal-end-date m_style mr-2 label-nm" >
+                            {{--Số lượng bình--}}
+                            <div class="calendar-modal-end-date m_style mr-2 label-nm">
                                 <label for="ammount"><i class="icofont-box"></i></label>
                                 <input type="number" id="ammount" placeholder="Số lượng bình" name="ammount" required>
                             </div>
-                        {{--Loại bình--}}
+                            {{--Loại bình--}}
                             <div class="calendar-modal-start-date m_style mr-2 label-nm" style="width: 100%">
                                 <label for="shellType"><i class="icofont-bullet"></i></label>
                                 <select style="width: 100%" id="shellType" class="m-state" name="shellType">
@@ -179,7 +176,8 @@
                         <div class="calendar-modal-dates mt-10 d-flex">
                             <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="salePrice"><i class="icofont-bill"></i></label>
-                                <input type="text" oninput="formatNumber('price3')" id="salePrice" placeholder="Giá bán" name="salePrice" required>
+                                <input type="text" oninput="formatNumber('price3')" id="salePrice" placeholder="Giá bán"
+                                       name="salePrice" required>
                             </div>
                             <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="note"><i class="icofont-binary"></i></label>
@@ -189,7 +187,8 @@
                         <div class="calendar-modal-dates mt-10 d-flex">
                             <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="note"><i class="icofont-binary"></i></label>
-                                <input type="text" oninput="formatNumber('price3')" id="debt" placeholder="Nợ tiền" name="debt">
+                                <input type="text" oninput="formatNumber('price3')" id="debt" placeholder="Nợ tiền"
+                                       name="debt">
                             </div>
                             <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="salePrice"><i class="icofont-bullet"></i></label>
@@ -254,7 +253,8 @@
                 <!-- Modal Body -->
                 <div id="modalBody2" class="modal-body border-bottom-0 pt-0 pb-0">
                     @if(!is_null($priceOrigin))
-                        <h4 class="font-20 mb-30 pt-20" for="salePrice">Giá bán (Min: {{ number_format($priceOrigin['minSaleOrigin'], 0 , ',' , '.' ) }} VND)</h4>
+                        <h4 class="font-20 mb-30 pt-20" for="salePrice">Giá bán
+                            (Min: {{ number_format($priceOrigin['minSaleOrigin'], 0 , ',' , '.' ) }} VND)</h4>
                     @endif
                     <form action="{{ route('addBill') }}" method="POST">
                         @csrf
@@ -286,7 +286,7 @@
                                 </select>
                             </div>
                             {{--Số lượng bình--}}
-                            <div class="calendar-modal-end-date m_style mr-2 label-nm" >
+                            <div class="calendar-modal-end-date m_style mr-2 label-nm">
                                 <label for="ammount"><i class="icofont-box"></i></label>
                                 <input type="number" id="ammount" placeholder="Số lượng bình" name="ammount" required>
                             </div>
@@ -333,13 +333,14 @@
         inputStorage.addEventListener('change', function handleChange(event) {
             onKhoChange();
         });
+
         function onKhoChange() {
             const storageId = document.getElementById('storageId').value
             console.log(storageId);
             $.ajax({
                 url: '/kho/' + storageId,
                 method: 'GET',
-                success: function(response) {
+                success: function (response) {
                     console.log(response);
                     $('.bt20').text('(' + response.bt20 + ') - 20kg');
                     $('.bt25').text('(' + response.bt25 + ') - 25kg');
@@ -349,7 +350,7 @@
                     $('.bn3').text('(' + response.bn3 + ') - 3kg');
                     $('.bn4').text('(' + response.bn4 + ') - 4kg');
                 },
-                error: function(error) {
+                error: function (error) {
                     console.log(error);
                 }
             });
@@ -363,17 +364,21 @@
             inputElement.value = formattedValue;
         }
     </script>
-        <!-- End Main Content -->
-    @endsection
-    @section('footer-script')
-        <!-- ======= BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
-        <script src="{{asset('assets/plugins/jquery-repeater/repeater.min.js')}}"></script>
-        <script src="{{asset('assets/plugins/jquery-repeater/custom-repeater.js')}}"></script>
-        <!-- ======= End BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
-        <!-- ======= BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
-        <script src="{{asset('assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
-        <script src="{{asset('assets/plugins/moment/moment.min.js')}}"></script>
-        <script src="{{asset('assets/plugins/datepicker/datepicker.min.js')}}"></script>
-        <script src="{{asset('assets/plugins/timepicker/jquery.timepicker.min.js')}}"></script>
-        <!-- ======= End BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
-    @endsection
+@endsection
+@section('footer-script')
+    <!-- ======= BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
+    <script src="{{asset('assets/plugins/jquery-repeater/repeater.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/jquery-repeater/custom-repeater.js')}}"></script>
+    <!-- ======= End BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
+    <!-- ======= BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= -->
+    <script src="{{asset('assets/plugins/jquery-ui/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/moment/moment.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/datepicker/datepicker.min.js')}}"></script>
+    <script src="{{asset('assets/plugins/timepicker/jquery.timepicker.min.js')}}"></script>
+    <!-- ======= End BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS ======= --><!-- ✅ Your JS script here ✅  -->
+    <script>
+        $(document).ready(function () {
+            $('.basic-single').select2();
+        });
+    </script>
+@endsection

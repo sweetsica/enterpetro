@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('codeBill')->nullable();
             $table->dateTime('inStoreDate')->nullable();//Ngày nhập
-            $table->string('nameCustomer')->nullable();//Tên khách
+            $table->string('customer_id');//Tên khách
             $table->string('address')->nullable();//Địa chỉ
             $table->string('contact')->nullable();//Liên hệ
             $table->string('unit')->nullable();//Đơn vị tính
