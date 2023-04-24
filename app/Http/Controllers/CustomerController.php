@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class CustomerController extends Controller
 {
@@ -13,7 +14,12 @@ class CustomerController extends Controller
      */
     public function index(Request $request)
     {
-        $customers = Customer::take(50)->orderBy('id', 'asc');
+        $userId = Session::get('userId');
+        if(Session::get('role') == 'admin'){
+            $customers = Customer::take(50)->orderBy('id', 'asc');
+        }else{
+            $customers = Customer::where('idSale', $userId)->take(50)->orderBy('id', 'asc');
+        }
         if ($request->search) {
             $customers = $customers->where('name', 'like', "%$request->search%");
             $data['search'] = $request->search;

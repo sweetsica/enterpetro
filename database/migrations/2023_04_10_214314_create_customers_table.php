@@ -24,6 +24,7 @@ return new class extends Migration
             $table->string('totalBill')->nullable();
             $table->string('debtMoney')->nullable();
             $table->string('debtShell')->nullable();
+            $table->string('idSale')->nullable();
             $table->text('note')->nullable();
             $table->timestamps();
         });

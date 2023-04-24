@@ -66,21 +66,8 @@
                 <div class="col-12 pb-30 justify-content-between">
                     <div class="col-1" style="float: right;">
                         <div class="edit-event-btn">
-{{--                            <a href="#" class="btn w-100" data-toggle="modal" data-target="#editEventModal">--}}
-{{--                                Cập nhật--}}
-{{--                            </a>--}}
                         </div>
                     </div>
-                    <input id="search" name="search" value="{{$search ?? ''}}" onchange="fetchData()"
-                           placeholder="Nhập mã đơn - enter để lọc">
-                    <script>
-                        function fetchData() {
-                            const searchInput = document.getElementById('search')
-                            const urlParams = new URLSearchParams(window.location.search);
-                            urlParams.set('search', searchInput.value);
-                            window.location.search = urlParams;
-                        }
-                    </script>
                 </div>
             </div>
         </div>
@@ -98,31 +85,31 @@
                             <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="salePrice"><i class="icofont-bill"></i></label>
                                 <input type="text" id="name" placeholder="Tên khách hàng"
-                                       name="name" required>
+                                       name="name">
                             </div>
                             <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="note"><i class="icofont-binary"></i></label>
                                 <input type="text" id="type" placeholder="Sỉ"
-                                       name="type" required>
+                                       name="type">
                             </div>
                         </div>
                         <div class="calendar-modal-dates mt-10 d-flex">
                             <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="note"><i class="icofont-binary"></i></label>
                                 <input type="text" id="address" placeholder="Địa chỉ"
-                                       name="address" required>
+                                       name="address">
                             </div>
                             <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="salePrice"><i class="icofont-bullet"></i></label>
                                 <input type="text" id="phone" placeholder="Số điện thoại"
-                                       name="phone" required>
+                                       name="phone">
                             </div>
                         </div>
                         <div class="calendar-modal-dates mt-10 d-flex">
                             <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="salePrice"><i class="icofont-bullet"></i></label>
                                 <input type="text" id="note" placeholder="Ghi chú"
-                                       name="note" required>
+                                       name="note">
                             </div>
                         </div>
                         <div class="modal-footer border-top-0 pt-10">

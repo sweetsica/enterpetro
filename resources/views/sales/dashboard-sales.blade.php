@@ -89,18 +89,11 @@
                     <div class="col-1" style="float: right;">
                         <div class="edit-event-btn">
                             <a href="#" class="btn w-100" data-toggle="modal" data-target="#createCustomerModal">
-                                {{--                                <img src="../../assets/img/svg/plus_white.svg" alt="" class="svg mr-1">--}}
+                                <img src="../../assets/img/svg/et-profile-male.svg" alt="" class="svg mr-1">
                                 Khách mới
                             </a>
                         </div>
                     </div>
-                    {{--                    <div class="col-1" style="float: right;">--}}
-                    {{--                        <div class="edit-event-btn">--}}
-                    {{--                            <a href="#" class="btn w-100" data-toggle="modal" data-target="#createEventModal">--}}
-                    {{--                               Tìm kiếm--}}
-                    {{--                            </a>--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
                     <input id="search" name="search" value="{{$search ?? ''}}" onchange="fetchData()"
                            placeholder="Nhập mã đơn - enter để lọc">
                     <script>
@@ -215,7 +208,6 @@
                     <h4 class="font-20 mb-30 pt-20">Cập nhật đơn</h4>
                     <form action="{{ route('updateBill') }}" method="POST">
                         @csrf
-                        //
                         <div class="calendar-modal-dates mt-10 d-flex">
                             <div class="calendar-modal-start-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="nameCustomer"><i class="icofont-beard"></i></label>
@@ -252,70 +244,44 @@
             <div class="modal-content">
                 <!-- Modal Body -->
                 <div id="modalBody2" class="modal-body border-bottom-0 pt-0 pb-0">
-                    @if(!is_null($priceOrigin))
-                        <h4 class="font-20 mb-30 pt-20" for="salePrice">Giá bán
-                            (Min: {{ number_format($priceOrigin['minSaleOrigin'], 0 , ',' , '.' ) }} VND)</h4>
-                    @endif
-                    <form action="{{ route('addBill') }}" method="POST">
+                    <h4 class="font-20 mb-30 pt-20">Thêm mới khách hàng</h4>
+                    <form action="{{ route('store-cus') }}" method="POST">
                         @csrf
-                        <div class="calendar-modal-dates mt-10 d-flex">
-                            <div class="calendar-modal-start-date m_style mr-2 label-nm" style="width: 50%;">
-                                <label for="nameCustomer"><i class="icofont-beard"></i></label>
-                                {{--                                <input type="text" id="nameCustomer" placeholder="Họ tên" name="nameCustomer" required>--}}
-                                <input list="nameCustomer" name="nameCustomer2" id="nameCustomer2">
-                                <datalist id="nameCustomer">
-                                    @foreach($customers as $customer)
-                                        <option value="{{$customer->name}}"></option>
-                                    @endforeach
-                                </datalist>
-                            </div>
-                            <div class="calendar-modal-start-date m_style mr-2 label-nm" style="width: 50%;">
-                                <label for="address"><i class="icofont-address-book"></i></label>
-                                <input type="text" id="address" placeholder="Địa chỉ" name="address" required>
-                            </div>
-                        </div>
-                        <div class="calendar-modal-dates mt-10 d-flex">
-                            {{--Kho--}}
-                            <div class="calendar-modal-start-date m_style mr-2 label-nm">
-                                <label for="storageId"><i class="icofont-building"></i></label>
-                                <select id="storageId" class="m-state">
-                                    <option default placeholder="Chọn kho" disabled>-Chọn kho-</option>
-                                    @foreach($storages as $storage)
-                                        <option value="{{$storage['id']}}">{{$storage['name']}}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-                            {{--Số lượng bình--}}
-                            <div class="calendar-modal-end-date m_style mr-2 label-nm">
-                                <label for="ammount"><i class="icofont-box"></i></label>
-                                <input type="number" id="ammount" placeholder="Số lượng bình" name="ammount" required>
-                            </div>
-                            {{--Loại bình--}}
-                            <div class="calendar-modal-start-date m_style mr-2 label-nm" style="width: 100%">
-                                <label for="shellType"><i class="icofont-bullet"></i></label>
-                                <select style="width: 100%" id="shellType" class="m-state" name="shellType">
-                                    <option class="bt20" value="1"></option>
-                                    <option class="bt25" value="2"></option>
-                                    <option class="bt27" value="3"></option>
-                                    <option class="bt28" value="4"></option>
-                                    <option class="bn2" value="5"></option>
-                                    <option class="bn3" value="6"></option>
-                                    <option class="bn4" value="7"></option>
-                                </select>
-                            </div>
-                        </div>
                         <div class="calendar-modal-dates mt-10 d-flex">
                             <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="salePrice"><i class="icofont-bill"></i></label>
-                                <input type="number" id="salePrice" placeholder="Giá bán" name="salePrice" required>
+                                <input type="text" id="name" placeholder="Tên khách hàng"
+                                       name="name">
                             </div>
                             <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 50%;">
                                 <label for="note"><i class="icofont-binary"></i></label>
-                                <input type="text" id="note" placeholder="Note đơn" name="note">
+                                <select name="type">
+                                    <option value="Sỉ">Sỉ</option>
+                                    <option value="Lẻ">Lẻ</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="calendar-modal-dates mt-10 d-flex">
+                            <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 50%;">
+                                <label for="note"><i class="icofont-binary"></i></label>
+                                <input type="text" id="address" placeholder="Địa chỉ"
+                                       name="address">
+                            </div>
+                            <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 50%;">
+                                <label for="salePrice"><i class="icofont-bullet"></i></label>
+                                <input type="text" id="phone" placeholder="Số điện thoại"
+                                       name="phone">
+                            </div>
+                        </div>
+                        <div class="calendar-modal-dates mt-10 d-flex">
+                            <div class="calendar-modal-end-date m_style mr-2 label-nm" style="width: 100%;">
+                                <label for="salePrice"><i class="icofont-edit"></i></label>
+                                <input type="text" id="note" placeholder="Ghi chú"
+                                       name="note">
                             </div>
                         </div>
                         <div class="modal-footer border-top-0 pt-10">
-                            <button type="submit" class="btn">Tạo đơn</button>
+                            <button type="submit" class="btn">Lên đơn</button>
                         </div>
                     </form>
 
